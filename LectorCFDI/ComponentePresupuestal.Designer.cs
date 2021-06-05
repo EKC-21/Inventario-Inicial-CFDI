@@ -371,7 +371,7 @@
             this.chkAutorizar.Name = "chkAutorizar";
             this.chkAutorizar.Size = new System.Drawing.Size(67, 17);
             this.chkAutorizar.TabIndex = 37;
-            this.chkAutorizar.Text = "Aotorizar";
+            this.chkAutorizar.Text = "Autorizar";
             this.chkAutorizar.UseVisualStyleBackColor = true;
             // 
             // groupBox1
