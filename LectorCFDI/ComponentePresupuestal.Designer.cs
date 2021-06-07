@@ -414,7 +414,7 @@
             // cboTipoRequisicion
             // 
             this.cboTipoRequisicion.FormattingEnabled = true;
-            this.cboTipoRequisicion.Location = new System.Drawing.Point(866, 220);
+            this.cboTipoRequisicion.Location = new System.Drawing.Point(866, 222);
             this.cboTipoRequisicion.Name = "cboTipoRequisicion";
             this.cboTipoRequisicion.Size = new System.Drawing.Size(121, 21);
             this.cboTipoRequisicion.TabIndex = 39;
