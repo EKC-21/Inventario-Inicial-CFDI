@@ -130,6 +130,7 @@ namespace LectorCFDI
                 }
             }
         }
+        //comentario prueba 
         private void ProcesarTodosXml()
         {
             XNamespace nsCFDI33 = "http://www.sat.gob.mx/cfd/3";
@@ -153,7 +154,7 @@ namespace LectorCFDI
 
             string filepath = "";
             int respuesta = 0;
-            int respuestaFactura = 0;
+            int respuestaFactura = 12;
 
             if (openFileDialog1.SafeFileNames != null)
             {
