@@ -382,12 +382,12 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmbClasifAdmin);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnDireccion);
+            //this.groupBox1.Controls.Add(this.btnDireccion);
             this.groupBox1.Controls.Add(this.txtSecretaria);
             this.groupBox1.Controls.Add(this.chkAutorizar);
-            this.groupBox1.Controls.Add(this.btnSubSecretaria);
+            //this.groupBox1.Controls.Add(this.btnSubSecretaria);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.btnSeccretaria);
+            //this.groupBox1.Controls.Add(this.btnSeccretaria);
             this.groupBox1.Controls.Add(this.txtSubSecretaria);
             this.groupBox1.Controls.Add(this.cmbFteFinanciamiento);
             this.groupBox1.Controls.Add(this.label8);
