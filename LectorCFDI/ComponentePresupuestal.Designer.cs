@@ -47,18 +47,19 @@
             this.txtClaveSubSecretaria = new System.Windows.Forms.TextBox();
             this.txtClaveDireccion = new System.Windows.Forms.TextBox();
             this.txtClaveProyecto = new System.Windows.Forms.TextBox();
-            this.txtProyecto = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtIdProyecto = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbFteFinanciamiento = new System.Windows.Forms.ComboBox();
-            this.btnSeccretaria = new FontAwesome.Sharp.IconButton();
-            this.btnSubSecretaria = new FontAwesome.Sharp.IconButton();
-            this.btnDireccion = new FontAwesome.Sharp.IconButton();
-            this.btnProyecto = new FontAwesome.Sharp.IconButton();
+            this.btnSeccretaria1 = new FontAwesome.Sharp.IconButton();
+            this.btnSubSecretaria1 = new FontAwesome.Sharp.IconButton();
+            this.btnDireccion1 = new FontAwesome.Sharp.IconButton();
+            this.btnProyecto1 = new FontAwesome.Sharp.IconButton();
             this.chkAutorizar = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbLstXml = new System.Windows.Forms.GroupBox();
+            this.Seleccionar = new System.Windows.Forms.CheckedListBox();
             this.cboTipoRequisicion = new System.Windows.Forms.ComboBox();
             this.txtFF = new System.Windows.Forms.TextBox();
             this.txtclaveProyect = new System.Windows.Forms.TextBox();
@@ -74,7 +75,13 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.txtProyecto = new System.Windows.Forms.TextBox();
+            this.btnSeccretaria = new FontAwesome.Sharp.IconButton();
+            this.btnSubSecretaria = new FontAwesome.Sharp.IconButton();
+            this.btnDireccion = new FontAwesome.Sharp.IconButton();
+            this.btnProyecto = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
+            this.gbLstXml.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,7 +148,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(4, 24);
+            this.label5.Location = new System.Drawing.Point(5, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(174, 16);
             this.label5.TabIndex = 8;
@@ -152,7 +159,7 @@
             this.cmbClasifAdmin.FormattingEnabled = true;
             this.cmbClasifAdmin.Location = new System.Drawing.Point(184, 22);
             this.cmbClasifAdmin.Name = "cmbClasifAdmin";
-            this.cmbClasifAdmin.Size = new System.Drawing.Size(777, 21);
+            this.cmbClasifAdmin.Size = new System.Drawing.Size(566, 21);
             this.cmbClasifAdmin.TabIndex = 9;
             // 
             // label6
@@ -160,7 +167,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(105, 53);
+            this.label6.Location = new System.Drawing.Point(106, 53);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 16);
             this.label6.TabIndex = 10;
@@ -168,16 +175,16 @@
             // 
             // txtSecretaria
             // 
-            this.txtSecretaria.Location = new System.Drawing.Point(297, 52);
+            this.txtSecretaria.Location = new System.Drawing.Point(243, 52);
             this.txtSecretaria.Name = "txtSecretaria";
-            this.txtSecretaria.Size = new System.Drawing.Size(664, 20);
+            this.txtSecretaria.Size = new System.Drawing.Size(507, 20);
             this.txtSecretaria.TabIndex = 11;
             // 
             // txtSubSecretaria
             // 
-            this.txtSubSecretaria.Location = new System.Drawing.Point(297, 80);
+            this.txtSubSecretaria.Location = new System.Drawing.Point(243, 80);
             this.txtSubSecretaria.Name = "txtSubSecretaria";
-            this.txtSubSecretaria.Size = new System.Drawing.Size(664, 20);
+            this.txtSubSecretaria.Size = new System.Drawing.Size(507, 20);
             this.txtSubSecretaria.TabIndex = 13;
             // 
             // label7
@@ -185,7 +192,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(78, 82);
+            this.label7.Location = new System.Drawing.Point(79, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 16);
             this.label7.TabIndex = 12;
@@ -193,9 +200,9 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(297, 108);
+            this.txtDireccion.Location = new System.Drawing.Point(243, 108);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(664, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(507, 20);
             this.txtDireccion.TabIndex = 15;
             // 
             // label8
@@ -203,7 +210,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(110, 108);
+            this.label8.Location = new System.Drawing.Point(111, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 16);
             this.label8.TabIndex = 14;
@@ -213,9 +220,9 @@
             // 
             this.txtBidppiclasificadorsubsidios.BackColor = System.Drawing.Color.Teal;
             this.txtBidppiclasificadorsubsidios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBidppiclasificadorsubsidios.Location = new System.Drawing.Point(385, 185);
+            this.txtBidppiclasificadorsubsidios.Location = new System.Drawing.Point(322, 187);
             this.txtBidppiclasificadorsubsidios.Name = "txtBidppiclasificadorsubsidios";
-            this.txtBidppiclasificadorsubsidios.Size = new System.Drawing.Size(264, 13);
+            this.txtBidppiclasificadorsubsidios.Size = new System.Drawing.Size(208, 13);
             this.txtBidppiclasificadorsubsidios.TabIndex = 16;
             this.txtBidppiclasificadorsubsidios.Visible = false;
             // 
@@ -223,43 +230,36 @@
             // 
             this.txtClaveSecretaria.Location = new System.Drawing.Point(184, 52);
             this.txtClaveSecretaria.Name = "txtClaveSecretaria";
-            this.txtClaveSecretaria.Size = new System.Drawing.Size(107, 20);
+            this.txtClaveSecretaria.Size = new System.Drawing.Size(51, 20);
             this.txtClaveSecretaria.TabIndex = 17;
             // 
             // txtClaveSubSecretaria
             // 
             this.txtClaveSubSecretaria.Location = new System.Drawing.Point(184, 81);
             this.txtClaveSubSecretaria.Name = "txtClaveSubSecretaria";
-            this.txtClaveSubSecretaria.Size = new System.Drawing.Size(107, 20);
+            this.txtClaveSubSecretaria.Size = new System.Drawing.Size(51, 20);
             this.txtClaveSubSecretaria.TabIndex = 18;
             // 
             // txtClaveDireccion
             // 
             this.txtClaveDireccion.Location = new System.Drawing.Point(184, 108);
             this.txtClaveDireccion.Name = "txtClaveDireccion";
-            this.txtClaveDireccion.Size = new System.Drawing.Size(107, 20);
+            this.txtClaveDireccion.Size = new System.Drawing.Size(51, 20);
             this.txtClaveDireccion.TabIndex = 19;
             // 
             // txtClaveProyecto
             // 
             this.txtClaveProyecto.Location = new System.Drawing.Point(184, 137);
             this.txtClaveProyecto.Name = "txtClaveProyecto";
-            this.txtClaveProyecto.Size = new System.Drawing.Size(107, 20);
+            this.txtClaveProyecto.Size = new System.Drawing.Size(51, 20);
             this.txtClaveProyecto.TabIndex = 22;
-            // 
-            // txtProyecto
-            // 
-            this.txtProyecto.Location = new System.Drawing.Point(297, 137);
-            this.txtProyecto.Name = "txtProyecto";
-            this.txtProyecto.Size = new System.Drawing.Size(664, 20);
-            this.txtProyecto.TabIndex = 21;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(113, 138);
+            this.label9.Location = new System.Drawing.Point(114, 138);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 16);
             this.label9.TabIndex = 20;
@@ -269,7 +269,7 @@
             // 
             this.txtIdProyecto.Location = new System.Drawing.Point(184, 185);
             this.txtIdProyecto.Name = "txtIdProyecto";
-            this.txtIdProyecto.Size = new System.Drawing.Size(107, 20);
+            this.txtIdProyecto.Size = new System.Drawing.Size(51, 20);
             this.txtIdProyecto.TabIndex = 24;
             // 
             // label10
@@ -277,7 +277,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(99, 186);
+            this.label10.Location = new System.Drawing.Point(100, 186);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 16);
             this.label10.TabIndex = 23;
@@ -288,7 +288,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(51, 224);
+            this.label11.Location = new System.Drawing.Point(52, 224);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(127, 16);
             this.label11.TabIndex = 25;
@@ -299,75 +299,75 @@
             this.cmbFteFinanciamiento.FormattingEnabled = true;
             this.cmbFteFinanciamiento.Location = new System.Drawing.Point(184, 222);
             this.cmbFteFinanciamiento.Name = "cmbFteFinanciamiento";
-            this.cmbFteFinanciamiento.Size = new System.Drawing.Size(664, 21);
+            this.cmbFteFinanciamiento.Size = new System.Drawing.Size(566, 21);
             this.cmbFteFinanciamiento.TabIndex = 32;
             // 
-            // btnSeccretaria
+            // btnSeccretaria1
             // 
-            this.btnSeccretaria.FlatAppearance.BorderSize = 0;
-            this.btnSeccretaria.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnSeccretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeccretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSeccretaria.IconColor = System.Drawing.Color.White;
-            this.btnSeccretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSeccretaria.IconSize = 20;
-            this.btnSeccretaria.Location = new System.Drawing.Point(964, 52);
-            this.btnSeccretaria.Name = "btnSeccretaria";
-            this.btnSeccretaria.Size = new System.Drawing.Size(23, 21);
-            this.btnSeccretaria.TabIndex = 33;
-            this.btnSeccretaria.UseVisualStyleBackColor = true;
-            this.btnSeccretaria.Click += new System.EventHandler(this.btnSeccretaria_Click);
+            this.btnSeccretaria1.FlatAppearance.BorderSize = 0;
+            this.btnSeccretaria1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btnSeccretaria1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeccretaria1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSeccretaria1.IconColor = System.Drawing.Color.White;
+            this.btnSeccretaria1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSeccretaria1.IconSize = 20;
+            this.btnSeccretaria1.Location = new System.Drawing.Point(759, 177);
+            this.btnSeccretaria1.Name = "btnSeccretaria1";
+            this.btnSeccretaria1.Size = new System.Drawing.Size(23, 21);
+            this.btnSeccretaria1.TabIndex = 33;
+            this.btnSeccretaria1.UseVisualStyleBackColor = true;
+            this.btnSeccretaria1.Click += new System.EventHandler(this.btnSeccretaria_Click);
             // 
-            // btnSubSecretaria
+            // btnSubSecretaria1
             // 
-            this.btnSubSecretaria.FlatAppearance.BorderSize = 0;
-            this.btnSubSecretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubSecretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSubSecretaria.IconColor = System.Drawing.Color.White;
-            this.btnSubSecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSubSecretaria.IconSize = 20;
-            this.btnSubSecretaria.Location = new System.Drawing.Point(967, 82);
-            this.btnSubSecretaria.Name = "btnSubSecretaria";
-            this.btnSubSecretaria.Size = new System.Drawing.Size(20, 21);
-            this.btnSubSecretaria.TabIndex = 34;
-            this.btnSubSecretaria.UseVisualStyleBackColor = true;
-            this.btnSubSecretaria.Click += new System.EventHandler(this.btnSubSecretaria_Click);
+            this.btnSubSecretaria1.FlatAppearance.BorderSize = 0;
+            this.btnSubSecretaria1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubSecretaria1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSubSecretaria1.IconColor = System.Drawing.Color.White;
+            this.btnSubSecretaria1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubSecretaria1.IconSize = 20;
+            this.btnSubSecretaria1.Location = new System.Drawing.Point(967, 82);
+            this.btnSubSecretaria1.Name = "btnSubSecretaria1";
+            this.btnSubSecretaria1.Size = new System.Drawing.Size(20, 21);
+            this.btnSubSecretaria1.TabIndex = 34;
+            this.btnSubSecretaria1.UseVisualStyleBackColor = true;
+            this.btnSubSecretaria1.Click += new System.EventHandler(this.btnSubSecretaria_Click);
             // 
-            // btnDireccion
+            // btnDireccion1
             // 
-            this.btnDireccion.FlatAppearance.BorderSize = 0;
-            this.btnDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDireccion.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnDireccion.IconColor = System.Drawing.Color.White;
-            this.btnDireccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDireccion.IconSize = 20;
-            this.btnDireccion.Location = new System.Drawing.Point(967, 111);
-            this.btnDireccion.Name = "btnDireccion";
-            this.btnDireccion.Size = new System.Drawing.Size(20, 21);
-            this.btnDireccion.TabIndex = 35;
-            this.btnDireccion.UseVisualStyleBackColor = true;
-            this.btnDireccion.Click += new System.EventHandler(this.btnDireccion_Click);
+            this.btnDireccion1.FlatAppearance.BorderSize = 0;
+            this.btnDireccion1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDireccion1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnDireccion1.IconColor = System.Drawing.Color.White;
+            this.btnDireccion1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDireccion1.IconSize = 20;
+            this.btnDireccion1.Location = new System.Drawing.Point(967, 111);
+            this.btnDireccion1.Name = "btnDireccion1";
+            this.btnDireccion1.Size = new System.Drawing.Size(20, 21);
+            this.btnDireccion1.TabIndex = 35;
+            this.btnDireccion1.UseVisualStyleBackColor = true;
+            this.btnDireccion1.Click += new System.EventHandler(this.btnDireccion_Click);
             // 
-            // btnProyecto
+            // btnProyecto1
             // 
-            this.btnProyecto.FlatAppearance.BorderSize = 0;
-            this.btnProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProyecto.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnProyecto.IconColor = System.Drawing.Color.White;
-            this.btnProyecto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnProyecto.IconSize = 20;
-            this.btnProyecto.Location = new System.Drawing.Point(967, 138);
-            this.btnProyecto.Name = "btnProyecto";
-            this.btnProyecto.Size = new System.Drawing.Size(20, 21);
-            this.btnProyecto.TabIndex = 36;
-            this.btnProyecto.UseVisualStyleBackColor = true;
-            this.btnProyecto.Click += new System.EventHandler(this.btnProyecto_Click);
+            this.btnProyecto1.FlatAppearance.BorderSize = 0;
+            this.btnProyecto1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProyecto1.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnProyecto1.IconColor = System.Drawing.Color.White;
+            this.btnProyecto1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProyecto1.IconSize = 20;
+            this.btnProyecto1.Location = new System.Drawing.Point(967, 138);
+            this.btnProyecto1.Name = "btnProyecto1";
+            this.btnProyecto1.Size = new System.Drawing.Size(20, 21);
+            this.btnProyecto1.TabIndex = 36;
+            this.btnProyecto1.UseVisualStyleBackColor = true;
+            this.btnProyecto1.Click += new System.EventHandler(this.btnProyecto_Click);
             // 
             // chkAutorizar
             // 
             this.chkAutorizar.AutoSize = true;
             this.chkAutorizar.ForeColor = System.Drawing.Color.White;
-            this.chkAutorizar.Location = new System.Drawing.Point(314, 185);
+            this.chkAutorizar.Location = new System.Drawing.Point(258, 185);
             this.chkAutorizar.Name = "chkAutorizar";
             this.chkAutorizar.Size = new System.Drawing.Size(67, 17);
             this.chkAutorizar.TabIndex = 37;
@@ -376,18 +376,19 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnProyecto);
+            this.groupBox1.Controls.Add(this.btnDireccion);
+            this.groupBox1.Controls.Add(this.btnSubSecretaria);
+            this.groupBox1.Controls.Add(this.btnSeccretaria);
             this.groupBox1.Controls.Add(this.cboTipoRequisicion);
             this.groupBox1.Controls.Add(this.txtFF);
             this.groupBox1.Controls.Add(this.txtclaveProyect);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmbClasifAdmin);
             this.groupBox1.Controls.Add(this.label6);
-            //this.groupBox1.Controls.Add(this.btnDireccion);
             this.groupBox1.Controls.Add(this.txtSecretaria);
             this.groupBox1.Controls.Add(this.chkAutorizar);
-            //this.groupBox1.Controls.Add(this.btnSubSecretaria);
             this.groupBox1.Controls.Add(this.label7);
-            //this.groupBox1.Controls.Add(this.btnSeccretaria);
             this.groupBox1.Controls.Add(this.txtSubSecretaria);
             this.groupBox1.Controls.Add(this.cmbFteFinanciamiento);
             this.groupBox1.Controls.Add(this.label8);
@@ -404,38 +405,57 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(11, 76);
+            this.groupBox1.Location = new System.Drawing.Point(226, 88);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1020, 253);
+            this.groupBox1.Size = new System.Drawing.Size(805, 260);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
             // 
+            // gbLstXml
+            // 
+            this.gbLstXml.Controls.Add(this.Seleccionar);
+            this.gbLstXml.ForeColor = System.Drawing.Color.White;
+            this.gbLstXml.Location = new System.Drawing.Point(12, 88);
+            this.gbLstXml.Name = "gbLstXml";
+            this.gbLstXml.Size = new System.Drawing.Size(194, 260);
+            this.gbLstXml.TabIndex = 51;
+            this.gbLstXml.TabStop = false;
+            this.gbLstXml.Text = "Lista de CFDI";
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.FormattingEnabled = true;
+            this.Seleccionar.Location = new System.Drawing.Point(6, 19);
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Size = new System.Drawing.Size(182, 229);
+            this.Seleccionar.TabIndex = 50;
+            // 
             // cboTipoRequisicion
             // 
             this.cboTipoRequisicion.FormattingEnabled = true;
-            this.cboTipoRequisicion.Location = new System.Drawing.Point(866, 222);
+            this.cboTipoRequisicion.Location = new System.Drawing.Point(579, 183);
             this.cboTipoRequisicion.Name = "cboTipoRequisicion";
-            this.cboTipoRequisicion.Size = new System.Drawing.Size(121, 21);
+            this.cboTipoRequisicion.Size = new System.Drawing.Size(85, 21);
             this.cboTipoRequisicion.TabIndex = 39;
             // 
             // txtFF
             // 
             this.txtFF.BackColor = System.Drawing.Color.Teal;
             this.txtFF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFF.Location = new System.Drawing.Point(655, 185);
+            this.txtFF.Location = new System.Drawing.Point(536, 187);
             this.txtFF.Name = "txtFF";
-            this.txtFF.Size = new System.Drawing.Size(64, 13);
+            this.txtFF.Size = new System.Drawing.Size(24, 13);
             this.txtFF.TabIndex = 38;
             this.txtFF.Visible = false;
             // 
             // txtclaveProyect
             // 
             this.txtclaveProyect.Enabled = false;
-            this.txtclaveProyect.Location = new System.Drawing.Point(41, 137);
+            this.txtclaveProyect.Location = new System.Drawing.Point(82, 138);
             this.txtclaveProyect.Name = "txtclaveProyect";
             this.txtclaveProyect.ReadOnly = true;
-            this.txtclaveProyect.Size = new System.Drawing.Size(69, 20);
+            this.txtclaveProyect.Size = new System.Drawing.Size(35, 20);
             this.txtclaveProyect.TabIndex = 37;
             this.txtclaveProyect.Visible = false;
             // 
@@ -486,7 +506,7 @@
             this.groupBox2.Controls.Add(this.rtxtJustificacion);
             this.groupBox2.Controls.Add(this.rtxtEspecificacion);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(11, 371);
+            this.groupBox2.Location = new System.Drawing.Point(11, 362);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1020, 229);
             this.groupBox2.TabIndex = 44;
@@ -577,12 +597,80 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtProyecto
+            // 
+            this.txtProyecto.Location = new System.Drawing.Point(243, 137);
+            this.txtProyecto.Name = "txtProyecto";
+            this.txtProyecto.Size = new System.Drawing.Size(507, 20);
+            this.txtProyecto.TabIndex = 21;
+            // 
+            // btnSeccretaria
+            // 
+            this.btnSeccretaria.FlatAppearance.BorderSize = 0;
+            this.btnSeccretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeccretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSeccretaria.IconColor = System.Drawing.Color.White;
+            this.btnSeccretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSeccretaria.IconSize = 20;
+            this.btnSeccretaria.Location = new System.Drawing.Point(756, 53);
+            this.btnSeccretaria.Name = "btnSeccretaria";
+            this.btnSeccretaria.Size = new System.Drawing.Size(16, 20);
+            this.btnSeccretaria.TabIndex = 40;
+            this.btnSeccretaria.UseVisualStyleBackColor = true;
+            this.btnSeccretaria.Click += new System.EventHandler(this.btnSeccretaria_Click);
+            // 
+            // btnSubSecretaria
+            // 
+            this.btnSubSecretaria.FlatAppearance.BorderSize = 0;
+            this.btnSubSecretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubSecretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSubSecretaria.IconColor = System.Drawing.Color.White;
+            this.btnSubSecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubSecretaria.IconSize = 20;
+            this.btnSubSecretaria.Location = new System.Drawing.Point(756, 82);
+            this.btnSubSecretaria.Name = "btnSubSecretaria";
+            this.btnSubSecretaria.Size = new System.Drawing.Size(16, 20);
+            this.btnSubSecretaria.TabIndex = 41;
+            this.btnSubSecretaria.UseVisualStyleBackColor = true;
+            this.btnSubSecretaria.Click += new System.EventHandler(this.btnSubSecretaria_Click);
+            // 
+            // btnDireccion
+            // 
+            this.btnDireccion.FlatAppearance.BorderSize = 0;
+            this.btnDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDireccion.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnDireccion.IconColor = System.Drawing.Color.White;
+            this.btnDireccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDireccion.IconSize = 20;
+            this.btnDireccion.Location = new System.Drawing.Point(756, 110);
+            this.btnDireccion.Name = "btnDireccion";
+            this.btnDireccion.Size = new System.Drawing.Size(16, 20);
+            this.btnDireccion.TabIndex = 42;
+            this.btnDireccion.UseVisualStyleBackColor = true;
+            this.btnDireccion.Click += new System.EventHandler(this.btnDireccion_Click);
+            // 
+            // btnProyecto
+            // 
+            this.btnProyecto.FlatAppearance.BorderSize = 0;
+            this.btnProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProyecto.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnProyecto.IconColor = System.Drawing.Color.White;
+            this.btnProyecto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProyecto.IconSize = 20;
+            this.btnProyecto.Location = new System.Drawing.Point(756, 138);
+            this.btnProyecto.Name = "btnProyecto";
+            this.btnProyecto.Size = new System.Drawing.Size(16, 20);
+            this.btnProyecto.TabIndex = 43;
+            this.btnProyecto.UseVisualStyleBackColor = true;
+            this.btnProyecto.Click += new System.EventHandler(this.btnProyecto_Click);
+            // 
             // ComponentePresupuestal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.gbLstXml);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnEditar);
@@ -602,6 +690,7 @@
             this.Load += new System.EventHandler(this.ComponentePresupuestal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gbLstXml.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
@@ -630,16 +719,15 @@
         private System.Windows.Forms.TextBox txtClaveSubSecretaria;
         private System.Windows.Forms.TextBox txtClaveDireccion;
         private System.Windows.Forms.TextBox txtClaveProyecto;
-        private System.Windows.Forms.TextBox txtProyecto;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtIdProyecto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbFteFinanciamiento;
-        private FontAwesome.Sharp.IconButton btnSeccretaria;
-        private FontAwesome.Sharp.IconButton btnSubSecretaria;
-        private FontAwesome.Sharp.IconButton btnDireccion;
-        private FontAwesome.Sharp.IconButton btnProyecto;
+        private FontAwesome.Sharp.IconButton btnSeccretaria1;
+        private FontAwesome.Sharp.IconButton btnSubSecretaria1;
+        private FontAwesome.Sharp.IconButton btnDireccion1;
+        private FontAwesome.Sharp.IconButton btnProyecto1;
         private System.Windows.Forms.CheckBox chkAutorizar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtpFechaSolicitud;
@@ -657,5 +745,12 @@
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.TextBox txtFF;
         private System.Windows.Forms.ComboBox cboTipoRequisicion;
+        private System.Windows.Forms.CheckedListBox Seleccionar;
+        private System.Windows.Forms.GroupBox gbLstXml;
+        private FontAwesome.Sharp.IconButton btnSeccretaria;
+        private System.Windows.Forms.TextBox txtProyecto;
+        private FontAwesome.Sharp.IconButton btnSubSecretaria;
+        private FontAwesome.Sharp.IconButton btnDireccion;
+        private FontAwesome.Sharp.IconButton btnProyecto;
     }
 }

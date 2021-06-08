@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Entidades;
 using System.Windows.Forms;
 using System.Collections;
+using System.IO;
 
 namespace LectorCFDI
 {
@@ -22,6 +23,7 @@ namespace LectorCFDI
         E_Subsecretaria e_Subsecretaria = new E_Subsecretaria();
         E_Direccion e_Direccion = new E_Direccion();
         E_Precompromiso e_Precompromiso = new E_Precompromiso();
+        ArrayList xml = new ArrayList();
         public ComponentePresupuestal()
         {
             InitializeComponent();
@@ -33,6 +35,14 @@ namespace LectorCFDI
             LlenarcmbFteFinanciamiento();
             BuscarSecretaria();
             chkAutorizar.Checked = true;
+            Seleccionar.ForeColor = Color.Black;
+            LlenarListBox();
+        }
+        private void LlenarListBox()
+        {
+                foreach (string file in Directory.GetFiles(@"C:\\Xml\\"))
+                    Seleccionar.Items.Add(Path.GetFileName(file));
+                
         }
         private void ConsultaCveAdva()
         {
@@ -104,8 +114,8 @@ namespace LectorCFDI
                     txtClaveSecretaria.Text = dtSecretaria.Rows[0]["Clave Unidad Responsable"].ToString().ToUpper().Trim();
                     txtSecretaria.Text = dtSecretaria.Rows[0]["Nombre Unidad Responsable"].ToString().ToUpper().Trim();
 
-                    btnSeccretaria.Enabled = false;
-                    btnSubSecretaria.Focus();
+                    btnSeccretaria1.Enabled = false;
+                    btnSubSecretaria1.Focus();
                     return;
                 }
                 //Formulario de consulta
@@ -174,7 +184,7 @@ namespace LectorCFDI
                     //Llenamos los datos de la dependencia
                     txtClaveSubSecretaria.Text = row.Cells[0].Value.ToString();
                     txtSubSecretaria.Text = row.Cells[2].Value.ToString().ToUpper();
-                    btnDireccion.Focus();
+                    btnDireccion1.Focus();
                     BuscarDireccion();
                 }
             }

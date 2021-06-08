@@ -138,7 +138,6 @@ namespace LectorCFDI
                 dtEmisor.Clear();
             }
         }
-        //comentario prueba 
         private void ProcesarTodosXml()
         {
             XNamespace nsCFDI33 = "http://www.sat.gob.mx/cfd/3";
