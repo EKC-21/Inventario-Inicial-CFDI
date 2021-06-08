@@ -21,7 +21,7 @@ namespace Entidades
         int tipoCambio;
         double subTotal;
         double total;
-        int version;
+        string version;
         string formapago;
         string archivoOriginal;
 
@@ -29,6 +29,7 @@ namespace Entidades
         string EmisorRFC;
         string EmisorNombre;
         string RegimenFiscal;
+        long idProveedor;
 
         //RECEPTOR
         string ReceptorRFC;
@@ -70,7 +71,7 @@ namespace Entidades
         public int TipoCambio { get => tipoCambio; set => tipoCambio = value; }
         public double SubTotal { get => subTotal; set => subTotal = value; }
         public double Total { get => total; set => total = value; }
-        public int Version { get => version; set => version = value; }
+        public string Version { get => version; set => version = value; }
         public string EmisorRFC1 { get => EmisorRFC; set => EmisorRFC = value; }
         public string EmisorNombre1 { get => EmisorNombre; set => EmisorNombre = value; }
         public string RegimenFiscal1 { get => RegimenFiscal; set => RegimenFiscal = value; }
@@ -94,6 +95,7 @@ namespace Entidades
         public string Formapago { get => formapago; set => formapago = value; }
         public string Uuidrelacionado { get => uuidrelacionado; set => uuidrelacionado = value; }
         public string ArchivoOriginal { get => archivoOriginal; set => archivoOriginal = value; }
+        public long IdProveedor { get => idProveedor; set => idProveedor = value; }
     } 
     public class Conceptos
     {

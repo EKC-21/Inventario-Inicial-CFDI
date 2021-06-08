@@ -107,27 +107,35 @@ namespace LectorCFDI
 
             DataSet ds = new DataSet();
             DataTable dtEmisor = new DataTable();
+            DataTable dtCtaContable = new DataTable();
 
             string filepath = "";
             int respuesta = 0;
+            string cuenta = "";
 
             foreach (string file in openFileDialog1.SafeFileNames)
             {
                 filepath = "C:\\Xml\\" + file;
                 ds.ReadXml(filepath);
                 dtEmisor = ds.Tables["Emisor"];
+                dtCtaContable = metodos.ConsultaCtaContable();
+                cuenta = dtCtaContable.Rows[1]["Nombre"].ToString().Substring(0, 12);
+
                 e_Comprobante.EmisorRFC1 = dtEmisor.Rows[0]["Rfc"].ToString();
-                e_Comprobante.Clave1 = metodos.ObtenerClave();
+                e_Comprobante.EmisorNombre1 = dtEmisor.Rows[0]["Nombre"].ToString();
+                e_Comprobante.Clave1 = metodos.CtaContablesP("A", "", cuenta);
                 e_Comprobante.Aux1 = metodos.ObtenerAux();
+
+                
                 if(e_Comprobante.Aux1 == "SI") { Convert.ToInt32(e_Comprobante.Aux1 = "1"); } else { Convert.ToInt32(e_Comprobante.Aux1 = "0"); }
 
-                respuesta = metodos.ValidaProveedor(e_Comprobante.EmisorRFC1);
+                respuesta = metodos.ValidaProveedor(e_Comprobante);
                 if(respuesta == 0)
                 {
                     metodos.GuardarProveedor(e_Comprobante);
-                    ds.Clear();
-                    dtEmisor.Clear();
                 }
+                ds.Clear();
+                dtEmisor.Clear();
             }
         }
         //comentario prueba 
@@ -138,6 +146,7 @@ namespace LectorCFDI
             DataSet ds = new DataSet();
             DataTable dtConcepto = new DataTable();
             DataTable dtEmisor = new DataTable();
+            DataTable dtReceptor = new DataTable();
             DataTable dtComplemento = new DataTable();
             DataTable dtComprobante = new DataTable();
             ArrayList lstXmlRepetidos = new ArrayList();
@@ -154,16 +163,18 @@ namespace LectorCFDI
 
             string filepath = "";
             int respuesta = 0;
-            int respuestaFactura = 12;
+            int respuestaFactura = 0;
 
             if (openFileDialog1.SafeFileNames != null)
             {
+                RegularProveedores();
                 foreach (string file in openFileDialog1.SafeFileNames)
                 {
                     filepath = "C:\\Xml\\" + file;
                     ds.ReadXml(filepath);
                     dtConcepto = ds.Tables["Concepto"];
                     dtEmisor = ds.Tables["Emisor"];
+                    dtReceptor = ds.Tables["Receptor"];
                     dtComplemento = ds.Tables["TimbreFiscalDigital"];
                     dtComprobante = ds.Tables["Comprobante"];
 
@@ -171,8 +182,13 @@ namespace LectorCFDI
                     e_Comprobante.Folio = dtComprobante.Rows[0]["Folio"].ToString();
                     e_Comprobante.UUID1 = dtComplemento.Rows[0]["UUID"].ToString();
                     e_Comprobante.NoCertificado = Convert.ToInt64(dtComprobante.Rows[0]["NoCertificado"].ToString());
+                    e_Comprobante.ArchivoOriginal = "Cargado por CFDI";
+                    e_Comprobante.Version = dtComprobante.Rows[0]["Version"].ToString();
+                    e_Comprobante.Formapago = dtComprobante.Rows[0]["FormaPago"].ToString();
+                    e_Comprobante.ReceptorRFC1 = dtReceptor.Rows[0]["Rfc"].ToString();
+                    e_Comprobante.SubTotal = Convert.ToDouble(dtComprobante.Rows[0]["SubTotal"].ToString());
+                    e_Comprobante.Total = Convert.ToDouble(dtComprobante.Rows[0]["Total"].ToString());
 
-                    RegularProveedores();
                     respuestaFactura = metodos.ValidarFactura(e_Comprobante);
                     if (respuestaFactura == 0)
                     {
@@ -200,8 +216,9 @@ namespace LectorCFDI
                             ConceptoDetalle.Rows.Add(row);
                         }
                         dgvTotalConceptos.DataSource = ConceptoDetalle;
-                        ds.Clear();
+                        e_Comprobante.IdProveedor = metodos.ValidaProveedor(e_Comprobante);
                         respuesta = metodos.GuardaFactura(e_Comprobante);
+                        ds.Clear();
                     }
                     else
                     {

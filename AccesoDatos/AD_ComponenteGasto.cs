@@ -25,9 +25,9 @@ namespace AccesoDatos
             }
         }
 
-        public int ComprobarProveedor(string rfc)
+        public int ComprobarProveedor(E_Comprobante e_Comprobante)
         {
-            int respuesta = 0;
+            int respuesta = 5;
             using (SqlConnection oConecction = new SqlConnection(AD_Conexion.CN))
             {
                 try
@@ -37,7 +37,7 @@ namespace AccesoDatos
                     cmd.Parameters.Clear();
                     cmd.Parameters.Add("@rfc", SqlDbType.VarChar, 15);
 
-                    cmd.Parameters["@rfc"].Value = rfc;
+                    cmd.Parameters["@rfc"].Value = e_Comprobante.EmisorRFC1;
 
                     oConecction.Open();
 
@@ -50,7 +50,7 @@ namespace AccesoDatos
                 catch (Exception ex)
                 {
 
-                    return 0;
+                    return respuesta;
                 }
             }
             return respuesta;
@@ -298,7 +298,7 @@ namespace AccesoDatos
         }
         public int GuardarFactura(E_Comprobante e_Comprobante)
         {
-            int respuesta = -1;
+            int respuesta = 5;
             using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
             {
                 try
@@ -307,7 +307,7 @@ namespace AccesoDatos
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Clear();
 
-                    //cmd.Parameters.Add("@idProveedor", SqlDbType.BigInt);
+                    cmd.Parameters.Add("@idProveedor", SqlDbType.BigInt);
                     cmd.Parameters.Add("@numeroFactura", SqlDbType.VarChar, 50);
                     cmd.Parameters.Add("@TablaOrigen", SqlDbType.VarChar, 50);
                     cmd.Parameters.Add("@Secuencial", SqlDbType.BigInt);
@@ -330,7 +330,7 @@ namespace AccesoDatos
                     cmd.Parameters.Add("@idCogRastreo", SqlDbType.VarChar, 17);
                     cmd.Parameters.Add("@archivoOriginal", SqlDbType.VarChar, 260);
 
-                    cmd.Parameters["@idProveedor"].Value = 0;
+                    cmd.Parameters["@idProveedor"].Value = e_Comprobante.IdProveedor;
                     cmd.Parameters["@numeroFactura"].Value = e_Comprobante.Folio;
                     cmd.Parameters["@TablaOrigen"].Value = "NE";
                     cmd.Parameters["@Secuencial"].Value = 0;
@@ -369,7 +369,7 @@ namespace AccesoDatos
         }
         public string AgregarProveedor(E_Comprobante e_Comprobante)
         {
-            string msg = "OK";
+            string msg = "";
             using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
             {
                 try
@@ -514,6 +514,66 @@ namespace AccesoDatos
                 }
             }
             return msg;
+        }
+        public DataTable ConsultaCtaContable5()
+        {
+            DataTable dtCta5nivel = new DataTable();
+            SqlDataReader leer;
+
+            using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("SPS_Ctas5nivelProveedores", oConnection);
+                    cmd.Parameters.Clear();
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConnection.Open();
+                    leer = cmd.ExecuteReader();
+                    dtCta5nivel.Load(leer);
+                    oConnection.Close();
+
+                }
+                catch (Exception ex)
+                {
+
+                    return dtCta5nivel = null;
+                }
+                return dtCta5nivel;
+            }
+        }
+        public string CuentasContablesP(string Tipo, string Nombre, string BusCuenta)
+        {
+            string cuenta = "";
+
+            using (SqlConnection oConecction = new SqlConnection(AD_Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sps_CuentasContablesProveedores", oConecction);
+                    cmd.Parameters.Clear();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@tipo", SqlDbType.VarChar, 1);
+                    cmd.Parameters.Add("@nombre", SqlDbType.VarChar, 300);
+                    cmd.Parameters.Add("@busCuenta", SqlDbType.VarChar, 80);
+
+                    cmd.Parameters["@tipo"].Value = Tipo;
+                    cmd.Parameters["@nombre"].Value = Nombre;
+                    cmd.Parameters["@busCuenta"].Value = BusCuenta;
+
+                    oConecction.Open();
+                    cuenta = Convert.ToString(cmd.ExecuteScalar());
+                    oConecction.Close();
+                    cmd.Parameters.Clear();
+
+                    return cuenta;
+                }
+                catch (Exception ex)
+                {
+
+                    throw new ArgumentException(ex.Message);
+                }
+            }
         }
     }
 }

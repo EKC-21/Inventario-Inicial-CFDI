@@ -26,9 +26,9 @@ namespace Models
         {
             return comp.GuardarCfdiTraslados(e_Comprobante);
         }
-        public int ValidaProveedor(string rfc)
+        public int ValidaProveedor(E_Comprobante e_Comprobante)
         {
-            return comp.ComprobarProveedor(rfc);
+            return comp.ComprobarProveedor(e_Comprobante);
         }
         public int ValidarFactura(E_Comprobante e_Comprobante)
         {
@@ -57,6 +57,14 @@ namespace Models
         public int GuardaFactura(E_Comprobante e_Comprobante)
         {
             return comp.GuardarFactura(e_Comprobante);
+        }
+        public DataTable ConsultaCtaContable()
+        {
+            return comp.ConsultaCtaContable5();
+        }
+        public string CtaContablesP(string Tipo, string Nombre, string BusCuenta)
+        {
+            return comp.CuentasContablesP(Tipo, Nombre, BusCuenta);
         }
     }
 }
