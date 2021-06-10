@@ -358,9 +358,18 @@ namespace LectorCFDI
             Pociciones.Columns.Add("Numero");
             Pociciones.Columns.Add("Nombre");
 
-            //E_Precompromiso e_Precompromiso = new E_Precompromiso();
             try
             {
+                if (string.IsNullOrEmpty(txtClaveSecretaria.Text)) {txtClaveSecretaria.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtSecretaria.Text)) {txtSecretaria.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtClaveSubSecretaria.Text)) {txtClaveSubSecretaria.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtSubSecretaria.Text)) {txtSubSecretaria.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtClaveDireccion.Text)) {txtClaveDireccion.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtDireccion.Text)) {txtDireccion.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtClaveProyecto.Text)) {txtClaveProyecto.Focus(); return; }                    
+                if (string.IsNullOrEmpty(txtIdProyecto.Text)) {txtIdProyecto.Focus(); return; }
+                    
+
                 if (Seleccionar.CheckedItems.Count > 0)
                 {
                     dtCveAdva = metodos.ConsultaCveAdva();
