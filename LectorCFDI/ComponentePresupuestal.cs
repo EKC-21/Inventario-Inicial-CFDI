@@ -40,9 +40,9 @@ namespace LectorCFDI
         }
         private void LlenarListBox()
         {
-                foreach (string file in Directory.GetFiles(@"C:\\Xml\\"))
-                    Seleccionar.Items.Add(Path.GetFileName(file));
-                
+            foreach (string file in Directory.GetFiles(@"C:\\Xml\\"))
+                Seleccionar.Items.Add(Path.GetFileName(file));
+
         }
         private void ConsultaCveAdva()
         {
@@ -314,7 +314,7 @@ namespace LectorCFDI
         {
             if (!String.IsNullOrEmpty(txtNoRequisiscion.Text))
                 e_Precompromiso.IdPrecompromiso = Convert.ToInt64(this.txtNoRequisiscion.Text.Trim());
-            e_Precompromiso.NumeroInterno = txtNoInterno.Text.Trim().ToUpper();
+            //e_Precompromiso.NumeroInterno = txtNoInterno.Text.Trim().ToUpper();
             e_Precompromiso.IdTipoGasto = 1;
             //OJO ALAMBRE !!! Convert.ToInt32(txtBTipoGasto.Text); 
             //cboTipoGasto.SelectedValue.ToString());
@@ -324,9 +324,9 @@ namespace LectorCFDI
             e_Precompromiso.ClaveSubsecretaria = txtClaveSubSecretaria.Text;
             e_Precompromiso.ClaveDireccion = txtClaveDireccion.Text;
             e_Precompromiso.IdProyecto = Convert.ToInt64(this.txtIdProyecto.Text.Trim());
-            //e_Precompromiso.Iddestino = Convert.ToInt32(cboDestino.SelectedValue.ToString());
-            //e_Precompromiso.TipoRequisicion = cboTipoRequisicion.SelectedItem.ToString();
-            e_Precompromiso.FechaSolicitud = dtpFechaSolicitud.Value;
+            e_Precompromiso.Iddestino = 20; //Convert.ToInt32(cboDestino.SelectedValue.ToString());
+            e_Precompromiso.TipoRequisicion = "Bienes/Materiales"; //cboTipoRequisicion.SelectedItem.ToString();
+            //e_Precompromiso.FechaSolicitud = dtpFechaSolicitud.Value;
             e_Precompromiso.Justificacion = rtxtJustificacion.Text.Trim().ToUpper();
             e_Precompromiso.Observaciones = rtxtObservaciones.Text.Trim().ToUpper();
             e_Precompromiso.Especificaciones = rtxtEspecificacion.Text.Trim().ToUpper();
@@ -342,22 +342,60 @@ namespace LectorCFDI
 
             return e_Precompromiso;
         }
-        public void InsertarPreCompromiso(ArrayList xml)
+        public void InsertarPreCompromiso()
         {
+            int consecutivo = 001;
+            string Interno = "CFDI-";
+            string filepath = "";
+            string file = "";
+
+            ArrayList xml = new ArrayList();
+            DataSet ds = new DataSet();
+            DataTable dtComprobante = new DataTable();
+            DataTable Pociciones = new DataTable();
+            DataTable dtCveAdva = new DataTable();
+
+            Pociciones.Columns.Add("Numero");
+            Pociciones.Columns.Add("Nombre");
+
+            //E_Precompromiso e_Precompromiso = new E_Precompromiso();
             try
             {
-                e_Precompromiso = AsignarCampos();
-                Int64 resultado = metodos.AltasPreCompromiso(e_Precompromiso);
-
-                if(resultado > 0)
+                if (Seleccionar.CheckedItems.Count > 0)
                 {
-                    MessageBox.Show("El registro se guardó correctamente. ");
+                    dtCveAdva = metodos.ConsultaCveAdva();
+                    foreach (object indexChecked in Seleccionar.CheckedItems)
+                    {
+                        DataRow row = Pociciones.NewRow();
+                        row["Numero"] = Interno + Convert.ToString(consecutivo++);
+                        row["Nombre"] = indexChecked.ToString();
+                        Pociciones.Rows.Add(row);
+                        //xml.Add(indexChecked.ToString());
+                    }
+                    foreach (DataRow row in Pociciones.Rows)
+                    {
+                        ds.Clear();
+                        file = row["Nombre"].ToString();
+                        e_Precompromiso.NumeroInterno = row["Numero"].ToString();
+                        filepath = "C:\\Xml\\" + file;
+                        ds.ReadXml(filepath);
+
+                        AsignarCampos();
+                        dtComprobante = ds.Tables["Comprobante"];
+                        e_Precompromiso.FechaSolicitud = Convert.ToDateTime(dtComprobante.Rows[0]["Fecha"].ToString());
+                        e_Precompromiso.FechaAutorizacion = DateTime.Now;
+                        e_Precompromiso.Estatus = "A";
+                        e_Precompromiso.Elabora = "Administrador Sistemas Sistemas";
+                        e_Precompromiso.Autoriza = "Administrador Sistemas Sistemas";
+                        e_Precompromiso.CveAdva = dtCveAdva.Rows[0][10].ToString();
+                        metodos.AltasPreCompromiso(e_Precompromiso);
+                    }
+                    MessageBox.Show("los registros se guardaron correctamente.");
                     this.DialogResult = DialogResult.OK;
-                    this.Close();
                 }
                 else
                 {
-                    MessageBox.Show(@"Falló la ínserción del registro. ");
+                    MessageBox.Show("Sleccione al menos un elemento de la lista para procesar");
                 }
             }
             catch (Exception ex)
@@ -383,10 +421,10 @@ namespace LectorCFDI
         private void btnProyecto_Click(object sender, EventArgs e)
         {
             BuscarProyecto();
-        }        
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            InsertarPreCompromiso();
         }
         #endregion
     }

@@ -58,11 +58,16 @@
             this.btnProyecto1 = new FontAwesome.Sharp.IconButton();
             this.chkAutorizar = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.gbLstXml = new System.Windows.Forms.GroupBox();
-            this.Seleccionar = new System.Windows.Forms.CheckedListBox();
+            this.btnProyecto = new FontAwesome.Sharp.IconButton();
+            this.btnDireccion = new FontAwesome.Sharp.IconButton();
+            this.btnSubSecretaria = new FontAwesome.Sharp.IconButton();
+            this.btnSeccretaria = new FontAwesome.Sharp.IconButton();
             this.cboTipoRequisicion = new System.Windows.Forms.ComboBox();
             this.txtFF = new System.Windows.Forms.TextBox();
             this.txtclaveProyect = new System.Windows.Forms.TextBox();
+            this.txtProyecto = new System.Windows.Forms.TextBox();
+            this.gbLstXml = new System.Windows.Forms.GroupBox();
+            this.Seleccionar = new System.Windows.Forms.CheckedListBox();
             this.dtpFechaSolicitud = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaAutorizacion = new System.Windows.Forms.DateTimePicker();
             this.rtxtJustificacion = new System.Windows.Forms.RichTextBox();
@@ -75,11 +80,6 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.txtProyecto = new System.Windows.Forms.TextBox();
-            this.btnSeccretaria = new FontAwesome.Sharp.IconButton();
-            this.btnSubSecretaria = new FontAwesome.Sharp.IconButton();
-            this.btnDireccion = new FontAwesome.Sharp.IconButton();
-            this.btnProyecto = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.gbLstXml.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -412,24 +412,65 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
             // 
-            // gbLstXml
+            // btnProyecto
             // 
-            this.gbLstXml.Controls.Add(this.Seleccionar);
-            this.gbLstXml.ForeColor = System.Drawing.Color.White;
-            this.gbLstXml.Location = new System.Drawing.Point(12, 88);
-            this.gbLstXml.Name = "gbLstXml";
-            this.gbLstXml.Size = new System.Drawing.Size(194, 260);
-            this.gbLstXml.TabIndex = 51;
-            this.gbLstXml.TabStop = false;
-            this.gbLstXml.Text = "Lista de CFDI";
+            this.btnProyecto.FlatAppearance.BorderSize = 0;
+            this.btnProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProyecto.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnProyecto.IconColor = System.Drawing.Color.White;
+            this.btnProyecto.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProyecto.IconSize = 20;
+            this.btnProyecto.Location = new System.Drawing.Point(756, 138);
+            this.btnProyecto.Name = "btnProyecto";
+            this.btnProyecto.Size = new System.Drawing.Size(16, 20);
+            this.btnProyecto.TabIndex = 43;
+            this.btnProyecto.UseVisualStyleBackColor = true;
+            this.btnProyecto.Click += new System.EventHandler(this.btnProyecto_Click);
             // 
-            // Seleccionar
+            // btnDireccion
             // 
-            this.Seleccionar.FormattingEnabled = true;
-            this.Seleccionar.Location = new System.Drawing.Point(6, 19);
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Size = new System.Drawing.Size(182, 229);
-            this.Seleccionar.TabIndex = 50;
+            this.btnDireccion.FlatAppearance.BorderSize = 0;
+            this.btnDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDireccion.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnDireccion.IconColor = System.Drawing.Color.White;
+            this.btnDireccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDireccion.IconSize = 20;
+            this.btnDireccion.Location = new System.Drawing.Point(756, 110);
+            this.btnDireccion.Name = "btnDireccion";
+            this.btnDireccion.Size = new System.Drawing.Size(16, 20);
+            this.btnDireccion.TabIndex = 42;
+            this.btnDireccion.UseVisualStyleBackColor = true;
+            this.btnDireccion.Click += new System.EventHandler(this.btnDireccion_Click);
+            // 
+            // btnSubSecretaria
+            // 
+            this.btnSubSecretaria.FlatAppearance.BorderSize = 0;
+            this.btnSubSecretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubSecretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSubSecretaria.IconColor = System.Drawing.Color.White;
+            this.btnSubSecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSubSecretaria.IconSize = 20;
+            this.btnSubSecretaria.Location = new System.Drawing.Point(756, 82);
+            this.btnSubSecretaria.Name = "btnSubSecretaria";
+            this.btnSubSecretaria.Size = new System.Drawing.Size(16, 20);
+            this.btnSubSecretaria.TabIndex = 41;
+            this.btnSubSecretaria.UseVisualStyleBackColor = true;
+            this.btnSubSecretaria.Click += new System.EventHandler(this.btnSubSecretaria_Click);
+            // 
+            // btnSeccretaria
+            // 
+            this.btnSeccretaria.FlatAppearance.BorderSize = 0;
+            this.btnSeccretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeccretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
+            this.btnSeccretaria.IconColor = System.Drawing.Color.White;
+            this.btnSeccretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSeccretaria.IconSize = 20;
+            this.btnSeccretaria.Location = new System.Drawing.Point(756, 53);
+            this.btnSeccretaria.Name = "btnSeccretaria";
+            this.btnSeccretaria.Size = new System.Drawing.Size(16, 20);
+            this.btnSeccretaria.TabIndex = 40;
+            this.btnSeccretaria.UseVisualStyleBackColor = true;
+            this.btnSeccretaria.Click += new System.EventHandler(this.btnSeccretaria_Click);
             // 
             // cboTipoRequisicion
             // 
@@ -438,6 +479,7 @@
             this.cboTipoRequisicion.Name = "cboTipoRequisicion";
             this.cboTipoRequisicion.Size = new System.Drawing.Size(85, 21);
             this.cboTipoRequisicion.TabIndex = 39;
+            this.cboTipoRequisicion.Visible = false;
             // 
             // txtFF
             // 
@@ -458,6 +500,32 @@
             this.txtclaveProyect.Size = new System.Drawing.Size(35, 20);
             this.txtclaveProyect.TabIndex = 37;
             this.txtclaveProyect.Visible = false;
+            // 
+            // txtProyecto
+            // 
+            this.txtProyecto.Location = new System.Drawing.Point(243, 137);
+            this.txtProyecto.Name = "txtProyecto";
+            this.txtProyecto.Size = new System.Drawing.Size(507, 20);
+            this.txtProyecto.TabIndex = 21;
+            // 
+            // gbLstXml
+            // 
+            this.gbLstXml.Controls.Add(this.Seleccionar);
+            this.gbLstXml.ForeColor = System.Drawing.Color.White;
+            this.gbLstXml.Location = new System.Drawing.Point(12, 88);
+            this.gbLstXml.Name = "gbLstXml";
+            this.gbLstXml.Size = new System.Drawing.Size(194, 260);
+            this.gbLstXml.TabIndex = 51;
+            this.gbLstXml.TabStop = false;
+            this.gbLstXml.Text = "Lista de CFDI";
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.FormattingEnabled = true;
+            this.Seleccionar.Location = new System.Drawing.Point(6, 19);
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Size = new System.Drawing.Size(182, 229);
+            this.Seleccionar.TabIndex = 50;
             // 
             // dtpFechaSolicitud
             // 
@@ -596,73 +664,6 @@
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtProyecto
-            // 
-            this.txtProyecto.Location = new System.Drawing.Point(243, 137);
-            this.txtProyecto.Name = "txtProyecto";
-            this.txtProyecto.Size = new System.Drawing.Size(507, 20);
-            this.txtProyecto.TabIndex = 21;
-            // 
-            // btnSeccretaria
-            // 
-            this.btnSeccretaria.FlatAppearance.BorderSize = 0;
-            this.btnSeccretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeccretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSeccretaria.IconColor = System.Drawing.Color.White;
-            this.btnSeccretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSeccretaria.IconSize = 20;
-            this.btnSeccretaria.Location = new System.Drawing.Point(756, 53);
-            this.btnSeccretaria.Name = "btnSeccretaria";
-            this.btnSeccretaria.Size = new System.Drawing.Size(16, 20);
-            this.btnSeccretaria.TabIndex = 40;
-            this.btnSeccretaria.UseVisualStyleBackColor = true;
-            this.btnSeccretaria.Click += new System.EventHandler(this.btnSeccretaria_Click);
-            // 
-            // btnSubSecretaria
-            // 
-            this.btnSubSecretaria.FlatAppearance.BorderSize = 0;
-            this.btnSubSecretaria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubSecretaria.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnSubSecretaria.IconColor = System.Drawing.Color.White;
-            this.btnSubSecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSubSecretaria.IconSize = 20;
-            this.btnSubSecretaria.Location = new System.Drawing.Point(756, 82);
-            this.btnSubSecretaria.Name = "btnSubSecretaria";
-            this.btnSubSecretaria.Size = new System.Drawing.Size(16, 20);
-            this.btnSubSecretaria.TabIndex = 41;
-            this.btnSubSecretaria.UseVisualStyleBackColor = true;
-            this.btnSubSecretaria.Click += new System.EventHandler(this.btnSubSecretaria_Click);
-            // 
-            // btnDireccion
-            // 
-            this.btnDireccion.FlatAppearance.BorderSize = 0;
-            this.btnDireccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDireccion.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnDireccion.IconColor = System.Drawing.Color.White;
-            this.btnDireccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnDireccion.IconSize = 20;
-            this.btnDireccion.Location = new System.Drawing.Point(756, 110);
-            this.btnDireccion.Name = "btnDireccion";
-            this.btnDireccion.Size = new System.Drawing.Size(16, 20);
-            this.btnDireccion.TabIndex = 42;
-            this.btnDireccion.UseVisualStyleBackColor = true;
-            this.btnDireccion.Click += new System.EventHandler(this.btnDireccion_Click);
-            // 
-            // btnProyecto
-            // 
-            this.btnProyecto.FlatAppearance.BorderSize = 0;
-            this.btnProyecto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProyecto.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnProyecto.IconColor = System.Drawing.Color.White;
-            this.btnProyecto.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnProyecto.IconSize = 20;
-            this.btnProyecto.Location = new System.Drawing.Point(756, 138);
-            this.btnProyecto.Name = "btnProyecto";
-            this.btnProyecto.Size = new System.Drawing.Size(16, 20);
-            this.btnProyecto.TabIndex = 43;
-            this.btnProyecto.UseVisualStyleBackColor = true;
-            this.btnProyecto.Click += new System.EventHandler(this.btnProyecto_Click);
             // 
             // ComponentePresupuestal
             // 
