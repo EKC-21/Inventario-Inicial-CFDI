@@ -37,6 +37,8 @@ namespace LectorCFDI
             chkAutorizar.Checked = true;
             Seleccionar.ForeColor = Color.Black;
             LlenarListBox();
+            LlenarGridPrecompromisos();
+            dgvPreCompromisos.ForeColor = Color.Black;
         }
         private void LlenarListBox()
         {
@@ -314,11 +316,12 @@ namespace LectorCFDI
         {
             if (!String.IsNullOrEmpty(txtNoRequisiscion.Text))
                 e_Precompromiso.IdPrecompromiso = Convert.ToInt64(this.txtNoRequisiscion.Text.Trim());
-            //e_Precompromiso.NumeroInterno = txtNoInterno.Text.Trim().ToUpper();
+            e_Precompromiso.NumeroInterno = txtNoInterno.Text.Trim().ToUpper();
             e_Precompromiso.IdTipoGasto = 1;
             //OJO ALAMBRE !!! Convert.ToInt32(txtBTipoGasto.Text); 
             //cboTipoGasto.SelectedValue.ToString());
             //e_Precompromiso.ClavePersonal = ClsLogin.NombreUsuarioE;  //ClsLogin.clavePersonal;
+            e_Precompromiso.Autoriza = "Administrador Sistemas Sistemas";
             e_Precompromiso.CveAdva = cmbClasifAdmin.SelectedValue.ToString();
             e_Precompromiso.ClaveSecretaria = txtClaveSecretaria.Text;
             e_Precompromiso.ClaveSubsecretaria = txtClaveSubSecretaria.Text;
@@ -326,7 +329,7 @@ namespace LectorCFDI
             e_Precompromiso.IdProyecto = Convert.ToInt64(this.txtIdProyecto.Text.Trim());
             e_Precompromiso.Iddestino = 20; //Convert.ToInt32(cboDestino.SelectedValue.ToString());
             e_Precompromiso.TipoRequisicion = "Bienes/Materiales"; //cboTipoRequisicion.SelectedItem.ToString();
-            //e_Precompromiso.FechaSolicitud = dtpFechaSolicitud.Value;
+            e_Precompromiso.FechaSolicitud = dtpFechaSolicitud.Value;
             e_Precompromiso.Justificacion = rtxtJustificacion.Text.Trim().ToUpper();
             e_Precompromiso.Observaciones = rtxtObservaciones.Text.Trim().ToUpper();
             e_Precompromiso.Especificaciones = rtxtEspecificacion.Text.Trim().ToUpper();
@@ -342,7 +345,7 @@ namespace LectorCFDI
 
             return e_Precompromiso;
         }
-        public void InsertarPreCompromiso()
+        private void InsertarPreCompromiso()
         {
             int consecutivo = 001;
             string Interno = "CFDI-";
@@ -360,15 +363,15 @@ namespace LectorCFDI
 
             try
             {
-                if (string.IsNullOrEmpty(txtClaveSecretaria.Text)) {txtClaveSecretaria.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtSecretaria.Text)) {txtSecretaria.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtClaveSubSecretaria.Text)) {txtClaveSubSecretaria.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtSubSecretaria.Text)) {txtSubSecretaria.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtClaveDireccion.Text)) {txtClaveDireccion.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtDireccion.Text)) {txtDireccion.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtClaveProyecto.Text)) {txtClaveProyecto.Focus(); return; }                    
-                if (string.IsNullOrEmpty(txtIdProyecto.Text)) {txtIdProyecto.Focus(); return; }
-                    
+                if (string.IsNullOrEmpty(txtClaveSecretaria.Text)) { txtClaveSecretaria.Focus(); return; }
+                if (string.IsNullOrEmpty(txtSecretaria.Text)) { txtSecretaria.Focus(); return; }
+                if (string.IsNullOrEmpty(txtClaveSubSecretaria.Text)) { txtClaveSubSecretaria.Focus(); return; }
+                if (string.IsNullOrEmpty(txtSubSecretaria.Text)) { txtSubSecretaria.Focus(); return; }
+                if (string.IsNullOrEmpty(txtClaveDireccion.Text)) { txtClaveDireccion.Focus(); return; }
+                if (string.IsNullOrEmpty(txtDireccion.Text)) { txtDireccion.Focus(); return; }
+                if (string.IsNullOrEmpty(txtClaveProyecto.Text)) { txtClaveProyecto.Focus(); return; }
+                if (string.IsNullOrEmpty(txtIdProyecto.Text)) { txtIdProyecto.Focus(); return; }
+
 
                 if (Seleccionar.CheckedItems.Count > 0)
                 {
@@ -395,7 +398,7 @@ namespace LectorCFDI
                         e_Precompromiso.FechaAutorizacion = DateTime.Now;
                         e_Precompromiso.Estatus = "A";
                         e_Precompromiso.Elabora = "Administrador Sistemas Sistemas";
-                        e_Precompromiso.Autoriza = "Administrador Sistemas Sistemas";
+                        e_Precompromiso.Observaciones = "SE CARGA INVENTARIO INICIAL A TRAVEZ DE CFDI";
                         e_Precompromiso.CveAdva = dtCveAdva.Rows[0][10].ToString();
                         metodos.AltasPreCompromiso(e_Precompromiso);
                     }
@@ -410,6 +413,70 @@ namespace LectorCFDI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void ObtenerValoresPrecompromiso(E_Precompromiso e_Precompromiso)
+        {
+            txtClaveSubSecretaria.Text = e_Precompromiso.ClaveSubsecretaria;
+            txtSecretaria.Text = e_Precompromiso.SubSecretaria;
+            txtClaveDireccion.Text = e_Precompromiso.ClaveDireccion;
+            txtDireccion.Text = e_Precompromiso.Direccion;
+
+            //txtClaveProyecto.Text = Convert.ToString(e_Precompromiso.IdProyecto);
+            txtProyecto.Text = e_Precompromiso.NombreProyecto;
+            txtIdProyecto.Text = Convert.ToString(e_Precompromiso.IdProyecto);
+            chkAutorizar.Checked = true;
+            cmbFteFinanciamiento.SelectedValue = e_Precompromiso.CveFF;
+            rtxtEspecificacion.Text = e_Precompromiso.Especificaciones;
+            rtxtJustificacion.Text = e_Precompromiso.Justificacion;
+            rtxtObservaciones.Text = e_Precompromiso.Observaciones;
+
+        }
+        private int EditarPreCompromisos(E_Precompromiso e_Precompromiso)
+        {
+            int resp = 0;
+            resp = metodos.EditaPrecompromiso(e_Precompromiso);
+
+            return resp;
+        }
+        private void LlenarGridPrecompromisos()
+        {
+            D_PreCompromisos metodosPC = new D_PreCompromisos();
+            DataTable dtPreCompromisos = new DataTable();
+            dtPreCompromisos = metodosPC.CargaPreCompromisos();
+
+            if (dtPreCompromisos != null)
+            {
+                dgvPreCompromisos.DataSource = dtPreCompromisos;
+            }
+            else
+            {
+                //MessageBox.Show("No se encontarron Precompromisos cargados por CFDI para mostrar");
+            }
+        }
+        private void CancelarPreCompromiso()
+        {
+            long IdPreCompromiso = 0;
+            int resp = 0;
+
+            IdPreCompromiso = Convert.ToInt64(txtNoRequisiscion.Text);
+            if (IdPreCompromiso == 0)
+            {
+                MessageBox.Show("No ha seleccionado ningun registro");
+                return;
+            }
+            else
+            {
+                resp = metodos.CancelaPrecompromisos(IdPreCompromiso);
+                if (resp == 5)
+                {
+                    MessageBox.Show("Ha ocurrido un error");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("El egistro se canceló con exito");
+                }
             }
         }
 
@@ -435,6 +502,62 @@ namespace LectorCFDI
         {
             InsertarPreCompromiso();
         }
+        private void dgvPreCompromisos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataTable dtProyectos = new DataTable();
+            if (e.RowIndex >= 0 && dgvPreCompromisos.SelectedRows.Count > 0)
+            {
+                txtNoRequisiscion.Text = Convert.ToString(dgvPreCompromisos[0, e.RowIndex].Value);
+                txtNoInterno.Text = Convert.ToString(dgvPreCompromisos[1, e.RowIndex].Value);
+                txtClaveSecretaria.Text = Convert.ToString(dgvPreCompromisos[5, e.RowIndex].Value);
+                txtSecretaria.Text = Convert.ToString(dgvPreCompromisos[6, e.RowIndex].Value);
+                txtClaveSubSecretaria.Text = Convert.ToString(dgvPreCompromisos[7, e.RowIndex].Value);
+                txtSubSecretaria.Text = Convert.ToString(dgvPreCompromisos[8, e.RowIndex].Value);
+                txtClaveDireccion.Text = Convert.ToString(dgvPreCompromisos[9, e.RowIndex].Value);
+                txtDireccion.Text = Convert.ToString(dgvPreCompromisos[10, e.RowIndex].Value);
+                txtIdProyecto.Text = Convert.ToString(dgvPreCompromisos[11, e.RowIndex].Value);
+                txtProyecto.Text = Convert.ToString(dgvPreCompromisos[12, e.RowIndex].Value);
+                dtpFechaSolicitud.Value = Convert.ToDateTime(dgvPreCompromisos[15, e.RowIndex].Value);
+                dtpFechaAutorizacion.Value = Convert.ToDateTime(dgvPreCompromisos[16, e.RowIndex].Value);
+                rtxtJustificacion.Text = Convert.ToString(dgvPreCompromisos[17, e.RowIndex].Value);
+                rtxtEspecificacion.Text = Convert.ToString(dgvPreCompromisos[18, e.RowIndex].Value);
+                rtxtObservaciones.Text = Convert.ToString(dgvPreCompromisos[19, e.RowIndex].Value);
+                cmbFteFinanciamiento.SelectedValue = Convert.ToInt32(dgvPreCompromisos[23, e.RowIndex].Value);
+                string estatus = Convert.ToString(dgvPreCompromisos[2, e.RowIndex].Value);
+                if (estatus == "A")
+                {
+                    chkAutorizar.Checked = true;
+                }
+                else
+                {
+                    chkAutorizar.Checked = false;
+                }
+            }
+        }
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            E_Precompromiso e_Precompromiso = new E_Precompromiso();
+            e_Precompromiso = AsignarCampos();
+            e_Precompromiso.Estatus = "A";
+            if (EditarPreCompromisos(e_Precompromiso) == 0)
+            {
+                MessageBox.Show("El registro se actualizó correctamente");
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error, no se pudo actualizar el registro, comuniquese con el administrador de sistemas");
+            }
+            LlenarGridPrecompromisos();
+
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CancelarPreCompromiso();
+            LlenarGridPrecompromisos();
+        }
+
         #endregion
+
+
     }
 }

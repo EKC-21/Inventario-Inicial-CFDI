@@ -37,11 +37,6 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.btnPrecompromisos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -60,8 +55,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             this.panelContenedor.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
@@ -158,8 +151,6 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.btnPrecompromisos);
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btnSalir);
             this.panel2.Controls.Add(this.panel4);
@@ -172,56 +163,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(220, 615);
             this.panel2.TabIndex = 4;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel9.Controls.Add(this.panel10);
-            this.panel9.Controls.Add(this.panel12);
-            this.panel9.Location = new System.Drawing.Point(0, 83);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(5, 30);
-            this.panel9.TabIndex = 5;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Location = new System.Drawing.Point(0, -44);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(5, 30);
-            this.panel10.TabIndex = 4;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel11.Location = new System.Drawing.Point(0, -29);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(5, 30);
-            this.panel11.TabIndex = 3;
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel12.Location = new System.Drawing.Point(0, -29);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(5, 30);
-            this.panel12.TabIndex = 3;
-            // 
-            // btnPrecompromisos
-            // 
-            this.btnPrecompromisos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btnPrecompromisos.FlatAppearance.BorderSize = 0;
-            this.btnPrecompromisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnPrecompromisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPrecompromisos.ForeColor = System.Drawing.Color.White;
-            this.btnPrecompromisos.Location = new System.Drawing.Point(5, 83);
-            this.btnPrecompromisos.Name = "btnPrecompromisos";
-            this.btnPrecompromisos.Size = new System.Drawing.Size(215, 30);
-            this.btnPrecompromisos.TabIndex = 6;
-            this.btnPrecompromisos.Text = "Pre Compromisos";
-            this.btnPrecompromisos.UseVisualStyleBackColor = false;
-            this.btnPrecompromisos.Click += new System.EventHandler(this.btnPrecompromisos_Click);
             // 
             // panel1
             // 
@@ -255,7 +196,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel4.Controls.Add(this.panel5);
-            this.panel4.Location = new System.Drawing.Point(0, 155);
+            this.panel4.Location = new System.Drawing.Point(0, 119);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 30);
             this.panel4.TabIndex = 4;
@@ -275,7 +216,7 @@
             this.btn_Gasto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btn_Gasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Gasto.ForeColor = System.Drawing.Color.White;
-            this.btn_Gasto.Location = new System.Drawing.Point(5, 155);
+            this.btn_Gasto.Location = new System.Drawing.Point(5, 119);
             this.btn_Gasto.Name = "btn_Gasto";
             this.btn_Gasto.Size = new System.Drawing.Size(215, 30);
             this.btn_Gasto.TabIndex = 1;
@@ -300,7 +241,7 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.panel6.Controls.Add(this.panel7);
             this.panel6.Controls.Add(this.panel3);
-            this.panel6.Location = new System.Drawing.Point(0, 119);
+            this.panel6.Location = new System.Drawing.Point(0, 83);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(5, 30);
             this.panel6.TabIndex = 2;
@@ -337,7 +278,7 @@
             this.btn_Presupuestal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
             this.btn_Presupuestal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Presupuestal.ForeColor = System.Drawing.Color.White;
-            this.btn_Presupuestal.Location = new System.Drawing.Point(5, 119);
+            this.btn_Presupuestal.Location = new System.Drawing.Point(5, 83);
             this.btn_Presupuestal.Name = "btn_Presupuestal";
             this.btn_Presupuestal.Size = new System.Drawing.Size(215, 30);
             this.btn_Presupuestal.TabIndex = 0;
@@ -365,8 +306,6 @@
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
@@ -394,11 +333,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Button btnPrecompromisos;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
     }

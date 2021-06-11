@@ -51,6 +51,7 @@
     <Compile Include="AD_ComponentePresupuestal.cs" />
     <Compile Include="AD_ComponenteGasto.cs" />
     <Compile Include="AD_Conexion.cs" />
+    <Compile Include="AD_PreCompromisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -49,5 +49,13 @@ namespace Models
         {
             return metodos.AltaPreCompromiso(e_Precompromiso);
         }
+        public int EditaPrecompromiso(E_Precompromiso e_Precompromiso)
+        {
+            return metodos.EditarPreCompromiso(e_Precompromiso);
+        }
+        public int CancelaPrecompromisos(long IdPrecompromiso)
+        {
+            return metodos.CancelarPreCompromiso(IdPrecompromiso);
+        }
     }
 }

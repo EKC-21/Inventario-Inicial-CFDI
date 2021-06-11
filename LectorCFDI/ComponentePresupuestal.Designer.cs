@@ -80,74 +80,72 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.gbLstPrecompromisos = new System.Windows.Forms.GroupBox();
+            this.dgvPreCompromisos = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.gbLstXml.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.gbLstPrecompromisos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPreCompromisos)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNoRequisiscion
             // 
-            this.txtNoRequisiscion.Location = new System.Drawing.Point(650, 18);
+            this.txtNoRequisiscion.Location = new System.Drawing.Point(151, 10);
             this.txtNoRequisiscion.Name = "txtNoRequisiscion";
             this.txtNoRequisiscion.Size = new System.Drawing.Size(147, 20);
             this.txtNoRequisiscion.TabIndex = 0;
-            this.txtNoRequisiscion.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(530, 20);
+            this.label1.Location = new System.Drawing.Point(31, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "No. Requisisción:";
-            this.label1.Visible = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(568, 47);
+            this.label2.Location = new System.Drawing.Point(69, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "No. Interno:";
-            this.label2.Visible = false;
             // 
             // txtNoInterno
             // 
-            this.txtNoInterno.Location = new System.Drawing.Point(649, 45);
+            this.txtNoInterno.Location = new System.Drawing.Point(150, 37);
             this.txtNoInterno.Name = "txtNoInterno";
             this.txtNoInterno.Size = new System.Drawing.Size(147, 20);
             this.txtNoInterno.TabIndex = 2;
-            this.txtNoInterno.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(540, 74);
+            this.label3.Location = new System.Drawing.Point(361, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Fecha Solicitud:";
-            this.label3.Visible = false;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(518, 104);
+            this.label4.Location = new System.Drawing.Point(339, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(125, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Fecha Autorización:";
-            this.label4.Visible = false;
             // 
             // label5
             // 
@@ -165,7 +163,7 @@
             this.cmbClasifAdmin.FormattingEnabled = true;
             this.cmbClasifAdmin.Location = new System.Drawing.Point(184, 22);
             this.cmbClasifAdmin.Name = "cmbClasifAdmin";
-            this.cmbClasifAdmin.Size = new System.Drawing.Size(532, 21);
+            this.cmbClasifAdmin.Size = new System.Drawing.Size(602, 21);
             this.cmbClasifAdmin.TabIndex = 9;
             // 
             // label6
@@ -183,14 +181,14 @@
             // 
             this.txtSecretaria.Location = new System.Drawing.Point(243, 52);
             this.txtSecretaria.Name = "txtSecretaria";
-            this.txtSecretaria.Size = new System.Drawing.Size(473, 20);
+            this.txtSecretaria.Size = new System.Drawing.Size(543, 20);
             this.txtSecretaria.TabIndex = 11;
             // 
             // txtSubSecretaria
             // 
             this.txtSubSecretaria.Location = new System.Drawing.Point(243, 80);
             this.txtSubSecretaria.Name = "txtSubSecretaria";
-            this.txtSubSecretaria.Size = new System.Drawing.Size(473, 20);
+            this.txtSubSecretaria.Size = new System.Drawing.Size(543, 20);
             this.txtSubSecretaria.TabIndex = 13;
             // 
             // label7
@@ -208,7 +206,7 @@
             // 
             this.txtDireccion.Location = new System.Drawing.Point(243, 108);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(473, 20);
+            this.txtDireccion.Size = new System.Drawing.Size(543, 20);
             this.txtDireccion.TabIndex = 15;
             // 
             // label8
@@ -305,7 +303,7 @@
             this.cmbFteFinanciamiento.FormattingEnabled = true;
             this.cmbFteFinanciamiento.Location = new System.Drawing.Point(184, 222);
             this.cmbFteFinanciamiento.Name = "cmbFteFinanciamiento";
-            this.cmbFteFinanciamiento.Size = new System.Drawing.Size(532, 21);
+            this.cmbFteFinanciamiento.Size = new System.Drawing.Size(602, 21);
             this.cmbFteFinanciamiento.TabIndex = 32;
             // 
             // btnSeccretaria1
@@ -411,9 +409,9 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(211, 10);
+            this.groupBox1.Location = new System.Drawing.Point(211, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(750, 260);
+            this.groupBox1.Size = new System.Drawing.Size(827, 260);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
@@ -426,7 +424,7 @@
             this.btnProyecto.IconColor = System.Drawing.Color.White;
             this.btnProyecto.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProyecto.IconSize = 20;
-            this.btnProyecto.Location = new System.Drawing.Point(722, 138);
+            this.btnProyecto.Location = new System.Drawing.Point(791, 138);
             this.btnProyecto.Name = "btnProyecto";
             this.btnProyecto.Size = new System.Drawing.Size(16, 20);
             this.btnProyecto.TabIndex = 43;
@@ -441,7 +439,7 @@
             this.btnDireccion.IconColor = System.Drawing.Color.White;
             this.btnDireccion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDireccion.IconSize = 20;
-            this.btnDireccion.Location = new System.Drawing.Point(722, 110);
+            this.btnDireccion.Location = new System.Drawing.Point(791, 110);
             this.btnDireccion.Name = "btnDireccion";
             this.btnDireccion.Size = new System.Drawing.Size(16, 20);
             this.btnDireccion.TabIndex = 42;
@@ -456,7 +454,7 @@
             this.btnSubSecretaria.IconColor = System.Drawing.Color.White;
             this.btnSubSecretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSubSecretaria.IconSize = 20;
-            this.btnSubSecretaria.Location = new System.Drawing.Point(722, 82);
+            this.btnSubSecretaria.Location = new System.Drawing.Point(791, 82);
             this.btnSubSecretaria.Name = "btnSubSecretaria";
             this.btnSubSecretaria.Size = new System.Drawing.Size(16, 20);
             this.btnSubSecretaria.TabIndex = 41;
@@ -471,7 +469,7 @@
             this.btnSeccretaria.IconColor = System.Drawing.Color.White;
             this.btnSeccretaria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSeccretaria.IconSize = 20;
-            this.btnSeccretaria.Location = new System.Drawing.Point(722, 53);
+            this.btnSeccretaria.Location = new System.Drawing.Point(791, 53);
             this.btnSeccretaria.Name = "btnSeccretaria";
             this.btnSeccretaria.Size = new System.Drawing.Size(16, 20);
             this.btnSeccretaria.TabIndex = 40;
@@ -511,14 +509,14 @@
             // 
             this.txtProyecto.Location = new System.Drawing.Point(243, 137);
             this.txtProyecto.Name = "txtProyecto";
-            this.txtProyecto.Size = new System.Drawing.Size(473, 20);
+            this.txtProyecto.Size = new System.Drawing.Size(543, 20);
             this.txtProyecto.TabIndex = 21;
             // 
             // gbLstXml
             // 
             this.gbLstXml.Controls.Add(this.Seleccionar);
             this.gbLstXml.ForeColor = System.Drawing.Color.White;
-            this.gbLstXml.Location = new System.Drawing.Point(12, 10);
+            this.gbLstXml.Location = new System.Drawing.Point(11, 84);
             this.gbLstXml.Name = "gbLstXml";
             this.gbLstXml.Size = new System.Drawing.Size(194, 260);
             this.gbLstXml.TabIndex = 51;
@@ -535,41 +533,39 @@
             // 
             // dtpFechaSolicitud
             // 
-            this.dtpFechaSolicitud.Location = new System.Drawing.Point(650, 74);
+            this.dtpFechaSolicitud.Location = new System.Drawing.Point(471, 14);
             this.dtpFechaSolicitud.Name = "dtpFechaSolicitud";
             this.dtpFechaSolicitud.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaSolicitud.TabIndex = 39;
-            this.dtpFechaSolicitud.Visible = false;
             // 
             // dtpFechaAutorizacion
             // 
-            this.dtpFechaAutorizacion.Location = new System.Drawing.Point(650, 105);
+            this.dtpFechaAutorizacion.Location = new System.Drawing.Point(471, 45);
             this.dtpFechaAutorizacion.Name = "dtpFechaAutorizacion";
             this.dtpFechaAutorizacion.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaAutorizacion.TabIndex = 40;
-            this.dtpFechaAutorizacion.Visible = false;
             // 
             // rtxtJustificacion
             // 
-            this.rtxtJustificacion.Location = new System.Drawing.Point(140, 112);
+            this.rtxtJustificacion.Location = new System.Drawing.Point(122, 95);
             this.rtxtJustificacion.Name = "rtxtJustificacion";
-            this.rtxtJustificacion.Size = new System.Drawing.Size(369, 70);
+            this.rtxtJustificacion.Size = new System.Drawing.Size(239, 58);
             this.rtxtJustificacion.TabIndex = 41;
             this.rtxtJustificacion.Text = "";
             // 
             // rtxtEspecificacion
             // 
-            this.rtxtEspecificacion.Location = new System.Drawing.Point(140, 19);
+            this.rtxtEspecificacion.Location = new System.Drawing.Point(123, 27);
             this.rtxtEspecificacion.Name = "rtxtEspecificacion";
-            this.rtxtEspecificacion.Size = new System.Drawing.Size(369, 70);
+            this.rtxtEspecificacion.Size = new System.Drawing.Size(239, 58);
             this.rtxtEspecificacion.TabIndex = 42;
             this.rtxtEspecificacion.Text = "";
             // 
             // rtxtObservaciones
             // 
-            this.rtxtObservaciones.Location = new System.Drawing.Point(140, 206);
+            this.rtxtObservaciones.Location = new System.Drawing.Point(122, 162);
             this.rtxtObservaciones.Name = "rtxtObservaciones";
-            this.rtxtObservaciones.Size = new System.Drawing.Size(369, 70);
+            this.rtxtObservaciones.Size = new System.Drawing.Size(239, 58);
             this.rtxtObservaciones.TabIndex = 43;
             this.rtxtObservaciones.Text = "";
             // 
@@ -580,19 +576,11 @@
             this.groupBox2.Controls.Add(this.lblEspecificaciones);
             this.groupBox2.Controls.Add(this.rtxtObservaciones);
             this.groupBox2.Controls.Add(this.rtxtJustificacion);
-            this.groupBox2.Controls.Add(this.dtpFechaAutorizacion);
             this.groupBox2.Controls.Add(this.rtxtEspecificacion);
-            this.groupBox2.Controls.Add(this.dtpFechaSolicitud);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtNoRequisiscion);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.txtNoInterno);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(11, 283);
+            this.groupBox2.Location = new System.Drawing.Point(11, 348);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(950, 320);
+            this.groupBox2.Size = new System.Drawing.Size(392, 255);
             this.groupBox2.TabIndex = 44;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Opcionales";
@@ -601,7 +589,7 @@
             // 
             this.lblObservaciones.AutoSize = true;
             this.lblObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservaciones.Location = new System.Drawing.Point(31, 230);
+            this.lblObservaciones.Location = new System.Drawing.Point(14, 182);
             this.lblObservaciones.Name = "lblObservaciones";
             this.lblObservaciones.Size = new System.Drawing.Size(103, 16);
             this.lblObservaciones.TabIndex = 46;
@@ -611,7 +599,7 @@
             // 
             this.lblJustificacion.AutoSize = true;
             this.lblJustificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJustificacion.Location = new System.Drawing.Point(50, 129);
+            this.lblJustificacion.Location = new System.Drawing.Point(32, 115);
             this.lblJustificacion.Name = "lblJustificacion";
             this.lblJustificacion.Size = new System.Drawing.Size(84, 16);
             this.lblJustificacion.TabIndex = 45;
@@ -621,7 +609,7 @@
             // 
             this.lblEspecificaciones.AutoSize = true;
             this.lblEspecificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecificaciones.Location = new System.Drawing.Point(20, 43);
+            this.lblEspecificaciones.Location = new System.Drawing.Point(3, 47);
             this.lblEspecificaciones.Name = "lblEspecificaciones";
             this.lblEspecificaciones.Size = new System.Drawing.Size(114, 16);
             this.lblEspecificaciones.TabIndex = 44;
@@ -636,13 +624,14 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 35;
-            this.btnEliminar.Location = new System.Drawing.Point(977, 136);
+            this.btnEliminar.Location = new System.Drawing.Point(899, 10);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(91, 54);
             this.btnEliminar.TabIndex = 49;
             this.btnEliminar.Text = "Cancelar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -654,13 +643,14 @@
             this.btnEditar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 35;
-            this.btnEditar.Location = new System.Drawing.Point(969, 75);
+            this.btnEditar.Location = new System.Drawing.Point(790, 11);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(103, 54);
             this.btnEditar.TabIndex = 48;
             this.btnEditar.Text = "Guardar Cambios";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -672,7 +662,7 @@
             this.btnGuardar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 35;
-            this.btnGuardar.Location = new System.Drawing.Point(977, 12);
+            this.btnGuardar.Location = new System.Drawing.Point(680, 12);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 54);
             this.btnGuardar.TabIndex = 47;
@@ -681,18 +671,49 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // gbLstPrecompromisos
+            // 
+            this.gbLstPrecompromisos.Controls.Add(this.dgvPreCompromisos);
+            this.gbLstPrecompromisos.ForeColor = System.Drawing.Color.White;
+            this.gbLstPrecompromisos.Location = new System.Drawing.Point(409, 348);
+            this.gbLstPrecompromisos.Name = "gbLstPrecompromisos";
+            this.gbLstPrecompromisos.Size = new System.Drawing.Size(629, 255);
+            this.gbLstPrecompromisos.TabIndex = 52;
+            this.gbLstPrecompromisos.TabStop = false;
+            this.gbLstPrecompromisos.Text = "Listado de Pre-Compromisos";
+            // 
+            // dgvPreCompromisos
+            // 
+            this.dgvPreCompromisos.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPreCompromisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPreCompromisos.Location = new System.Drawing.Point(6, 19);
+            this.dgvPreCompromisos.Name = "dgvPreCompromisos";
+            this.dgvPreCompromisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPreCompromisos.Size = new System.Drawing.Size(617, 230);
+            this.dgvPreCompromisos.TabIndex = 0;
+            this.dgvPreCompromisos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreCompromisos_CellClick);
+            // 
             // ComponentePresupuestal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.gbLstPrecompromisos);
             this.Controls.Add(this.gbLstXml);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.dtpFechaAutorizacion);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpFechaSolicitud);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtNoInterno);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtNoRequisiscion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ComponentePresupuestal";
             this.Text = "ComponentePresupuestal";
@@ -702,7 +723,10 @@
             this.gbLstXml.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.gbLstPrecompromisos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPreCompromisos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -760,5 +784,7 @@
         private FontAwesome.Sharp.IconButton btnSubSecretaria;
         private FontAwesome.Sharp.IconButton btnDireccion;
         private FontAwesome.Sharp.IconButton btnProyecto;
+        private System.Windows.Forms.GroupBox gbLstPrecompromisos;
+        private System.Windows.Forms.DataGridView dgvPreCompromisos;
     }
 }

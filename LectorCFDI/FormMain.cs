@@ -51,7 +51,7 @@ namespace LectorCFDI
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        private void OpenChildForm(object formhijo)
+        public void OpenChildForm(object formhijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -88,14 +88,10 @@ namespace LectorCFDI
             Application.Exit();
         }
 
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
+        public void panelContenedor_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void btnPrecompromisos_Click(object sender, EventArgs e)
-        {
-            OpenChildForm(new PreCompromisos());
-        }
     }
 }

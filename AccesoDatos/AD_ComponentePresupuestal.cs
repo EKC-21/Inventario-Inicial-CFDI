@@ -338,208 +338,96 @@ namespace AccesoDatos
                 return idPrecompromiso;
             }
         }
-        //    public DataTable Consultar()
-        //    {
-        //        DataTable resultado = new DataTable();
-        //        ArrayList Parametros = new ArrayList();
+        public int EditarPreCompromiso(E_Precompromiso e_Precompromiso)
+        {
+            int respuesta = 5;
+            using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_ADC_Precompromiso_Cambios", oConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Clear();
 
-        //        resultado = Datos.ExecuteProcReader("SPS_AccesoValoresCtasFijas");
+                    cmd.Parameters.Add("@idPrecompromiso", SqlDbType.BigInt);
+                    cmd.Parameters.Add("@numeroInterno", SqlDbType.VarChar, 30);
+                    cmd.Parameters.Add("@estatus", SqlDbType.VarChar, 2);
+                    cmd.Parameters.Add("@idTipoGasto", SqlDbType.Int);
+                    cmd.Parameters.Add("@autoriza", SqlDbType.VarChar, 60);
+                    cmd.Parameters.Add("@claveSecretaria", SqlDbType.VarChar, 7);
+                    cmd.Parameters.Add("@claveSubsecretaria", SqlDbType.VarChar, 7);
+                    cmd.Parameters.Add("@claveDireccion", SqlDbType.VarChar, 7);
+                    cmd.Parameters.Add("@id_proyecto", SqlDbType.Int);
+                    cmd.Parameters.Add("@tipoRequisicion", SqlDbType.VarChar, 30);
+                    cmd.Parameters.Add("@fechaAutorizacion", SqlDbType.Date);
+                    cmd.Parameters.Add("@justificacion", SqlDbType.VarChar, 100);
+                    cmd.Parameters.Add("@especificaciones", SqlDbType.VarChar, 200);
+                    cmd.Parameters.Add("@observaciones", SqlDbType.VarChar, 200);
+                    cmd.Parameters.Add("@iddestino", SqlDbType.Int);
+                    cmd.Parameters.Add("@idppiclasificadorsubsidios", SqlDbType.VarChar, 10);
+                    cmd.Parameters.Add("@AR", SqlDbType.Int);
+                    cmd.Parameters.Add("@CveFF", SqlDbType.Int);
 
-        //        if (resultado.Rows[0]["Conac"].ToString().ToUpper() == "SI")
-        //        {
-        //            Conac = true;
-        //        }
-        //        else
-        //        {
-        //            Conac = false;
-        //        }
+                    cmd.Parameters["@idPrecompromiso"].Value = e_Precompromiso.IdPrecompromiso;
+                    cmd.Parameters["@numeroInterno"].Value = e_Precompromiso.NumeroInterno;
+                    cmd.Parameters["@estatus"].Value = e_Precompromiso.Estatus;
+                    cmd.Parameters["@idTipoGasto"].Value = e_Precompromiso.IdTipoGasto;
+                    cmd.Parameters["@autoriza"].Value = e_Precompromiso.Autoriza;
+                    cmd.Parameters["@claveSecretaria"].Value = e_Precompromiso.ClaveSecretaria;
+                    cmd.Parameters["@claveSubsecretaria"].Value = e_Precompromiso.ClaveSubsecretaria;
+                    cmd.Parameters["@claveDireccion"].Value = e_Precompromiso.ClaveDireccion;
+                    cmd.Parameters["@id_proyecto"].Value = e_Precompromiso.IdProyecto;
+                    cmd.Parameters["@tipoRequisicion"].Value = e_Precompromiso.TipoRequisicion;
+                    cmd.Parameters["@fechaAutorizacion"].Value = e_Precompromiso.FechaAutorizacion;
+                    cmd.Parameters["@justificacion"].Value = e_Precompromiso.Justificacion;
+                    cmd.Parameters["@especificaciones"].Value = e_Precompromiso.Especificaciones;
+                    cmd.Parameters["@observaciones"].Value = e_Precompromiso.Observaciones;
+                    cmd.Parameters["@iddestino"].Value = e_Precompromiso.Iddestino;
+                    cmd.Parameters["@idppiclasificadorsubsidios"].Value = e_Precompromiso.idppiclasificadorsubsidios;
+                    cmd.Parameters["@AR"].Value = 0;
+                    cmd.Parameters["@CveFF"].Value = e_Precompromiso.CveFF;
 
-        //        keCtaImpuestosPorPagar = resultado.Rows[0]["keCtaImpuestosPorPagar"].ToString();
-        //        keCtaProveedores = resultado.Rows[0]["keCtaProveedores"].ToString();
-        //        keCtaAcreedores = resultado.Rows[0]["keCtaAcreedores"].ToString();
-        //        keCtaBancos = resultado.Rows[0]["keCtaBancos"].ToString();
-        //        keCtaDeudores = resultado.Rows[0]["keCtaDeudores"].ToString();
-        //        keCtaFondosRevolventes = resultado.Rows[0]["keCtaFondosRevolventes"].ToString();
-        //        keTituloReporte = resultado.Rows[0]["keTituloReporte"].ToString();
-        //        keCtaCap4000 = resultado.Rows[0]["keCtaCap4000"].ToString();
+                    oConnection.Open();
+                    respuesta = Convert.ToInt32(cmd.ExecuteScalar());
+                    //cmd.ExecuteNonQuery();
+                    oConnection.Close();
+                    cmd.Parameters.Clear();
+                }
+                catch (Exception ex)
+                {
 
-        //        CtaRetencionConac = resultado.Rows[0]["CtaRetencionConac"].ToString();
-        //        CtaRetencion1 = resultado.Rows[0]["CtaRetencion1"].ToString();
-        //        CtaRetencion2 = resultado.Rows[0]["CtaRetencion2"].ToString();
+                    return respuesta;
+                }
+                return respuesta;
+            }
+        }
+        public int CancelarPreCompromiso(long IdPrecompromiso)
+        {
+            int respuesta = 5;
+            using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_ADC_Precompromiso_Bajas", oConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Clear();
 
-        //        long_cta_contable = keCtaBancos.Length;
+                    cmd.Parameters.Add("@idPrecompromiso", SqlDbType.BigInt);
+                    cmd.Parameters["@idPrecompromiso"].Value = IdPrecompromiso;
 
-        //        Parametros.Clear();
-        //        Parametros.Add(new miParametro("@Usuario", Login, SqlDbType.VarChar, 20));
-        //        Parametros.Add(new miParametro("@Clave", Password, SqlDbType.VarChar, 200));
+                    oConnection.Open();
+                    respuesta = Convert.ToInt32(cmd.ExecuteScalar());
+                    oConnection.Close();
+                    cmd.Parameters.Clear();
+                }
+                catch (Exception)
+                {
 
-        //        //
-        //        PermisoGeneral = 1; //por default Usuario
-        //        kLogInUso = Login;
-        //        resultado = Datos.ExecuteProcReader("SPS_PERFILES_USUARIOSPermisos", Parametros);
-        //        if (resultado.Rows.Count > 0)
-        //        {
-        //            // Administrador     Permiso General = 0  ve todo y tiene los permisos de crear usuario y conceder todos los permisos
-        //            // Usuario           Permiso General = 1  ve solo lo suyo
-        //            // Súper User        Permiso General = 2  ve lo de su direccion
-        //            // Supervisor        Permiso General = 3  ve lo de todas las direcciones, solo lo de su subsecretaria
-        //            // Supervisor Mayor  Permiso General = 4  ve lo de todas las subsecretarias, solo de su secretaria
-        //            // Coordinador       Permiso General = 5  ve lo de todas las subsecretarias, de todas las secretarias
-        //            // Coordinador Mayor Permiso General = 6  ve todo de todas las secretarias, sin los permisos de crear usuario, ni conceder permisos
-        //            Usuario = "0";
-        //            SuperUsuario = "0";
-        //            Supervisor = "0";
-        //            Coordinador = "0";
-        //            SupervisorMayor = "0";
-        //            CoordinadorMayor = "0";
-        //            Administrador = "0";
+                    return respuesta;
+                }
+                return respuesta;
 
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Usuario") > -1)
-        //            {
-        //                Usuario = "1";
-        //                PermisoGeneral = 1;
-        //            }
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Súper User") > -1)
-        //            {
-        //                SuperUsuario = "1";
-        //                PermisoGeneral = 2;
-        //            }
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Supervisor") > -1)
-        //            {
-        //                Supervisor = "1";
-        //                PermisoGeneral = 3;
-        //            }
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Superv. Mayor") > -1)
-        //            {
-        //                SupervisorMayor = "1";
-        //                PermisoGeneral = 4;
-        //            }
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Coordinador") > -1)
-        //            {
-        //                Coordinador = "1";
-        //                PermisoGeneral = 5;
-        //            }
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Coord. Mayor") > -1)
-        //            {
-        //                CoordinadorMayor = "1";
-        //                PermisoGeneral = 6;
-        //            }
-        //            if (resultado.Rows[0]["DisplayMember"].ToString().IndexOf("Administrador") > -1)
-        //            {
-        //                Administrador = "1";
-        //                PermisoGeneral = 0;
-        //            }
-        //        }
-
-        //        Parametros.Add(new miParametro("@SuperUsuario", SuperUsuario, SqlDbType.VarChar, 20));
-        //        Parametros.Add(new miParametro("@Supervisor", Supervisor, SqlDbType.VarChar, 20));
-        //        Parametros.Add(new miParametro("@Coordinador", Coordinador, SqlDbType.VarChar, 20));
-        //        Parametros.Add(new miParametro("@SupervisorMayor", SupervisorMayor, SqlDbType.VarChar, 20));
-        //        Parametros.Add(new miParametro("@CoordinadorMayor", CoordinadorMayor, SqlDbType.VarChar, 20));
-        //        Parametros.Add(new miParametro("@Administrador", Administrador, SqlDbType.VarChar, 20));
-
-        //        resultado = Datos.ExecuteProcReader("SPS_Acceso", Parametros);
-        //        if (resultado.Rows.Count > 0)
-        //        {
-        //            UMA = Convert.ToDecimal(resultado.Rows[0]["UMA"].ToString());
-        //            ente = resultado.Rows[0]["ente"].ToString();
-        //            tipoente = resultado.Rows[0]["tipoente"].ToString();
-        //            nombreusuario = resultado.Rows[0]["nombreempleado"].ToString();
-        //            claveAdministrativa = resultado.Rows[0]["claveAdministrativa"].ToString();
-        //            descclaveAdministrativa = resultado.Rows[0]["descclaveAdministrativa"].ToString();
-        //            claveSecretaria = resultado.Rows[0]["claveSecretaria"].ToString();
-
-        //            SelppClaveSecretaria = resultado.Rows[0]["claveSecretaria"].ToString();
-        //            claveSubsecretaria = resultado.Rows[0]["claveSubsecretaria"].ToString();
-        //            SelppClaveSubsecretaria = resultado.Rows[0]["claveSubsecretaria"].ToString();
-        //            claveDireccion = resultado.Rows[0]["claveDireccion"].ToString();
-        //            SelppClaveDireccion = resultado.Rows[0]["claveDireccion"].ToString();
-
-        //            Activo = resultado.Rows[0]["Activo"].ToString();
-        //            //Supervisor = resultado.Rows[0]["supervisor"].ToString();
-        //            //SuperUsuario = resultado.Rows[0]["SuperUsuario"].ToString();
-        //            //Coordinador = resultado.Rows[0]["coordinador"].ToString();
-
-        //            clavePersonal = resultado.Rows[0]["clavePersonal"].ToString();
-        //            Logeado = resultado.Rows[0]["Logeado"].ToString();
-        //            Cancelado = resultado.Rows[0]["cancelado"].ToString();
-
-        //            NombreUsuarioE = resultado.Rows[0]["nombreempleado"].ToString();
-        //            cveUsuarioNomina = resultado.Rows[0]["cveUsuarioNomina"].ToString();
-        //            //
-        //            sec = resultado.Rows[0]["sec"].ToString();
-
-        //            etq_secretaria = resultado.Rows[0]["etq_secretaria"].ToString();
-        //            long_id_secretaria = resultado.Rows[0]["long_id_secretaria"].ToString();
-        //            tipo_datos_secretaria = resultado.Rows[0]["tipo_datos_secretaria"].ToString();
-
-        //            etq_subsecretaria = resultado.Rows[0]["etq_subsecretaria"].ToString();
-        //            long_id_subsecretaria = resultado.Rows[0]["long_id_subsecretaria"].ToString();
-        //            tipo_datos_subsecretaria = resultado.Rows[0]["tipo_datos_subsecretaria"].ToString();
-
-        //            etq_direccion = resultado.Rows[0]["etq_direccion"].ToString();
-        //            long_id_direccion = resultado.Rows[0]["long_id_direccion"].ToString();
-        //            tipo_datos_direccion = resultado.Rows[0]["tipo_datos_direccion"].ToString();
-
-        //            etq_obraaccion = resultado.Rows[0]["etq_obraaccion"].ToString();
-        //            long_id_obraaccion = resultado.Rows[0]["long_id_obraaccion"].ToString();
-        //            reg_exp_obraaccion = resultado.Rows[0]["reg_exp_obraaccion"].ToString();
-
-        //            long_cta_bancaria = resultado.Rows[0]["long_cta_bancaria"].ToString();
-        //            long_cta_clabe = resultado.Rows[0]["long_cta_clabe"].ToString();
-
-        //            etq_SeparadorNivel = resultado.Rows[0]["SeparadorNivel"].ToString();
-        //            long_cta_ctble3Nivel = resultado.Rows[0]["long_cta_ctble3Nivel"].ToString();
-        //            long_cta_ctble4Nivel = resultado.Rows[0]["long_cta_ctble4Nivel"].ToString();
-        //            long_cta_ctble5Nivel = resultado.Rows[0]["long_cta_ctble5Nivel"].ToString();
-        //            long_cta_ctble6Nivel = resultado.Rows[0]["long_cta_ctble6Nivel"].ToString();
-
-        //            diasXPeriodoNominaISR = resultado.Rows[0]["diasXPeriodoNominaISR"].ToString();
-
-        //            try
-        //            {
-        //                DescProporcional = Convert.ToDecimal(resultado.Rows[0]["DescProporcional"].ToString());
-        //            }
-        //            catch
-        //            {
-        //                DescProporcional = 1.40M;
-        //            }
-
-        //            fecha_registro = resultado.Rows[0]["fecha_registro"].ToString();
-
-        //            avisosWeb = resultado.Rows[0]["avisosWeb"].ToString();
-        //            //
-        //            rfcEnte = resultado.Rows[0]["rfc"].ToString();
-        //            //
-        //            Viaticos = resultado.Rows[0]["viaticos"].ToString();
-        //            BolAvion = resultado.Rows[0]["bolavion"].ToString();
-
-        //            enteAbreviado = resultado.Rows[0]["enteAbreviado"].ToString();
-        //            clave_estado = resultado.Rows[0]["clave_estado"].ToString();
-
-        //            if (resultado.Rows[0]["Auxiliares"].ToString().ToUpper() == "SI")
-        //            {
-        //                Auxiliares = true;
-        //            }
-        //            else
-        //            {
-        //                Auxiliares = false;
-        //            }
-
-        //            if (resultado.Rows[0]["TipoGRP"].ToString().ToUpper() == "0")  //version completa  0, Lite 1
-        //            {
-        //                VersionCompleta = true;
-        //            }
-        //            else
-        //            {
-        //                VersionCompleta = false;
-        //            }
-
-        //            //NombresDependencias(); //leo
-        //        }
-        //        //
-        //        return resultado;
-        //    }
-        //}
+            }
+        }
     }
 }

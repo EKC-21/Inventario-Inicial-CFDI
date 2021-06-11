@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="D_ComponentePresupuestal.cs" />
     <Compile Include="D_ComponenteGasto.cs" />
+    <Compile Include="D_PreCompromisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
