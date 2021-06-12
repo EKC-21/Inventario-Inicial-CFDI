@@ -35,10 +35,8 @@ namespace LectorCFDI
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            gbAcumuladoConceptos.ForeColor = System.Drawing.Color.White;
             gbLstXml.ForeColor = Color.White;
             gbTotales.ForeColor = Color.White;
-            gbTotalConceptos.ForeColor = Color.White;
             groupBox1.ForeColor = Color.White;
 
             dgvRegNotFound.ForeColor = Color.Black;

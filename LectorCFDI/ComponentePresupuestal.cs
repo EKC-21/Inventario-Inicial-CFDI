@@ -39,6 +39,7 @@ namespace LectorCFDI
             LlenarListBox();
             LlenarGridPrecompromisos();
             dgvPreCompromisos.ForeColor = Color.Black;
+            Seleccionar.ForeColor = Color.White;
         }
         private void LlenarListBox()
         {
@@ -447,7 +448,41 @@ namespace LectorCFDI
 
             if (dtPreCompromisos != null)
             {
+                dtPreCompromisos.Columns[0].ColumnName = "ID";
+                dtPreCompromisos.Columns[1].ColumnName = "Número Interno";
+                dtPreCompromisos.Columns[2].ColumnName = "Estatus";
+                dtPreCompromisos.Columns[3].ColumnName = "Id Tipo Gasto";
+                dtPreCompromisos.Columns[4].ColumnName = "Descripción";
+                dtPreCompromisos.Columns[5].ColumnName = "Clave Secretaría";
+                dtPreCompromisos.Columns[6].ColumnName = "Secretaría";
+                dtPreCompromisos.Columns[7].ColumnName = "Clave SubSecretaría";
+                dtPreCompromisos.Columns[8].ColumnName = "SubSecretaría";
+                dtPreCompromisos.Columns[9].ColumnName = "Clave Dirección";
+                dtPreCompromisos.Columns[10].ColumnName = "Dirección";
+                dtPreCompromisos.Columns[11].ColumnName = "Id Proyecto";
+                dtPreCompromisos.Columns[12].ColumnName = "Proyecto";
+                dtPreCompromisos.Columns[13].ColumnName = "Id Destino";
+                dtPreCompromisos.Columns[14].ColumnName = "Tipo Requisisción";
+                dtPreCompromisos.Columns[15].ColumnName = "Fecha de Solicitud";
+                dtPreCompromisos.Columns[16].ColumnName = "Fecha de Autorización";
+                dtPreCompromisos.Columns[17].ColumnName = "Justificación";
+                dtPreCompromisos.Columns[18].ColumnName = "Especificaciones";
+                dtPreCompromisos.Columns[19].ColumnName = "Observaciones";
+                dtPreCompromisos.Columns[20].ColumnName = "Clave Adva";
+                dtPreCompromisos.Columns[21].ColumnName = "Fuente de Financiamiento";
+                dtPreCompromisos.Columns[22].ColumnName = "Año de Registro";
+                dtPreCompromisos.Columns[23].ColumnName = "Clave FF";
+
                 dgvPreCompromisos.DataSource = dtPreCompromisos;
+
+                dgvPreCompromisos.Columns[0].Visible = false;
+                dgvPreCompromisos.Columns[3].Visible = false;
+                dgvPreCompromisos.Columns[11].Visible = false;
+                dgvPreCompromisos.Columns[13].Visible = false;
+                dgvPreCompromisos.Columns[17].Visible = false;
+                dgvPreCompromisos.Columns[18].Visible = false;
+                dgvPreCompromisos.Columns[19].Visible = false;
+                dgvPreCompromisos.Columns[23].Visible = false;
             }
             else
             {
@@ -538,7 +573,14 @@ namespace LectorCFDI
         {
             E_Precompromiso e_Precompromiso = new E_Precompromiso();
             e_Precompromiso = AsignarCampos();
-            e_Precompromiso.Estatus = "A";
+            if(chkAutorizar.Checked == true)
+            {
+                e_Precompromiso.Estatus = "A";
+            }
+            else
+            {
+                e_Precompromiso.Estatus = "C";
+            }
             if (EditarPreCompromisos(e_Precompromiso) == 0)
             {
                 MessageBox.Show("El registro se actualizó correctamente");
