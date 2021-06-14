@@ -66,5 +66,9 @@ namespace Models
         {
             return comp.CuentasContablesP(Tipo, Nombre, BusCuenta);
         }
+        public string LimpiaAcumuladoCFDI()
+        {
+            return comp.LimpiarAcumuladoConceptos();
+        }
     }
 }

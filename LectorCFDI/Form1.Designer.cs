@@ -98,6 +98,7 @@
             this.dgvTotalConceptos = new System.Windows.Forms.DataGridView();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
+            this.btnLimpia = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCFDI)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -819,12 +820,31 @@
             this.label33.TabIndex = 24;
             this.label33.Text = "Acumulado de Conceptos";
             // 
+            // btnLimpia
+            // 
+            this.btnLimpia.FlatAppearance.BorderSize = 0;
+            this.btnLimpia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpia.ForeColor = System.Drawing.Color.White;
+            this.btnLimpia.IconChar = FontAwesome.Sharp.IconChar.SyncAlt;
+            this.btnLimpia.IconColor = System.Drawing.Color.White;
+            this.btnLimpia.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpia.IconSize = 35;
+            this.btnLimpia.Location = new System.Drawing.Point(1000, 132);
+            this.btnLimpia.Name = "btnLimpia";
+            this.btnLimpia.Size = new System.Drawing.Size(73, 65);
+            this.btnLimpia.TabIndex = 25;
+            this.btnLimpia.Text = "Limpiar Acumulado";
+            this.btnLimpia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLimpia.UseVisualStyleBackColor = true;
+            this.btnLimpia.Click += new System.EventHandler(this.btnLimpia_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.btnLimpia);
             this.Controls.Add(this.label33);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.dgvRegNotFound);
@@ -921,6 +941,7 @@
         private System.Windows.Forms.DataGridView dgvTotalConceptos;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
+        private FontAwesome.Sharp.IconButton btnLimpia;
     }
 }
 

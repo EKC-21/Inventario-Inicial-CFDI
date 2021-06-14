@@ -85,6 +85,7 @@
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.dgvPreCompromisos = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.gbLstXml.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreCompromisos)).BeginInit();
@@ -225,9 +226,9 @@
             // 
             this.txtBidppiclasificadorsubsidios.BackColor = System.Drawing.Color.Teal;
             this.txtBidppiclasificadorsubsidios.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBidppiclasificadorsubsidios.Location = new System.Drawing.Point(673, 11);
+            this.txtBidppiclasificadorsubsidios.Location = new System.Drawing.Point(6, 189);
             this.txtBidppiclasificadorsubsidios.Name = "txtBidppiclasificadorsubsidios";
-            this.txtBidppiclasificadorsubsidios.Size = new System.Drawing.Size(127, 13);
+            this.txtBidppiclasificadorsubsidios.Size = new System.Drawing.Size(68, 13);
             this.txtBidppiclasificadorsubsidios.TabIndex = 16;
             this.txtBidppiclasificadorsubsidios.Visible = false;
             // 
@@ -384,8 +385,11 @@
             this.groupBox1.Controls.Add(this.btnProyecto);
             this.groupBox1.Controls.Add(this.btnDireccion);
             this.groupBox1.Controls.Add(this.btnSubSecretaria);
+            this.groupBox1.Controls.Add(this.cboTipoRequisicion);
+            this.groupBox1.Controls.Add(this.txtFF);
             this.groupBox1.Controls.Add(this.lblObservaciones);
             this.groupBox1.Controls.Add(this.btnSeccretaria);
+            this.groupBox1.Controls.Add(this.txtclaveProyect);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.cmbClasifAdmin);
             this.groupBox1.Controls.Add(this.lblJustificacion);
@@ -399,6 +403,7 @@
             this.groupBox1.Controls.Add(this.txtSubSecretaria);
             this.groupBox1.Controls.Add(this.cmbFteFinanciamiento);
             this.groupBox1.Controls.Add(this.rtxtEspecificacion);
+            this.groupBox1.Controls.Add(this.txtBidppiclasificadorsubsidios);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.txtDireccion);
@@ -503,6 +508,7 @@
             // 
             // rtxtObservaciones
             // 
+            this.rtxtObservaciones.Enabled = false;
             this.rtxtObservaciones.Location = new System.Drawing.Point(599, 208);
             this.rtxtObservaciones.Name = "rtxtObservaciones";
             this.rtxtObservaciones.Size = new System.Drawing.Size(220, 61);
@@ -546,7 +552,7 @@
             // cboTipoRequisicion
             // 
             this.cboTipoRequisicion.FormattingEnabled = true;
-            this.cboTipoRequisicion.Location = new System.Drawing.Point(673, 30);
+            this.cboTipoRequisicion.Location = new System.Drawing.Point(8, 208);
             this.cboTipoRequisicion.Name = "cboTipoRequisicion";
             this.cboTipoRequisicion.Size = new System.Drawing.Size(66, 21);
             this.cboTipoRequisicion.TabIndex = 39;
@@ -556,7 +562,7 @@
             // 
             this.txtFF.BackColor = System.Drawing.Color.Teal;
             this.txtFF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFF.Location = new System.Drawing.Point(786, 37);
+            this.txtFF.Location = new System.Drawing.Point(47, 238);
             this.txtFF.Name = "txtFF";
             this.txtFF.Size = new System.Drawing.Size(24, 13);
             this.txtFF.TabIndex = 38;
@@ -565,7 +571,7 @@
             // txtclaveProyect
             // 
             this.txtclaveProyect.Enabled = false;
-            this.txtclaveProyect.Location = new System.Drawing.Point(745, 31);
+            this.txtclaveProyect.Location = new System.Drawing.Point(6, 235);
             this.txtclaveProyect.Name = "txtclaveProyect";
             this.txtclaveProyect.ReadOnly = true;
             this.txtclaveProyect.Size = new System.Drawing.Size(35, 20);
@@ -617,7 +623,7 @@
             this.btnEliminar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 35;
-            this.btnEliminar.Location = new System.Drawing.Point(1000, 9);
+            this.btnEliminar.Location = new System.Drawing.Point(993, 9);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(62, 54);
             this.btnEliminar.TabIndex = 49;
@@ -636,7 +642,7 @@
             this.btnEditar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 35;
-            this.btnEditar.Location = new System.Drawing.Point(897, 9);
+            this.btnEditar.Location = new System.Drawing.Point(890, 9);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(100, 54);
             this.btnEditar.TabIndex = 48;
@@ -655,7 +661,7 @@
             this.btnGuardar.IconColor = System.Drawing.Color.Gainsboro;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 35;
-            this.btnGuardar.Location = new System.Drawing.Point(839, 9);
+            this.btnGuardar.Location = new System.Drawing.Point(832, 9);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(56, 54);
             this.btnGuardar.TabIndex = 47;
@@ -725,20 +731,37 @@
             this.label12.TabIndex = 52;
             this.label12.Text = "Listado de Pre-Compromisos guardados por CFDI";
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.SyncAlt;
+            this.btnLimpiar.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 35;
+            this.btnLimpiar.Location = new System.Drawing.Point(770, 9);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(56, 54);
+            this.btnLimpiar.TabIndex = 53;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // ComponentePresupuestal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
             this.ClientSize = new System.Drawing.Size(1080, 615);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dgvPreCompromisos);
             this.Controls.Add(this.gbLstXml);
-            this.Controls.Add(this.cboTipoRequisicion);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.txtFF);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.txtclaveProyect);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dtpFechaAutorizacion);
             this.Controls.Add(this.groupBox1);
@@ -749,7 +772,6 @@
             this.Controls.Add(this.txtNoInterno);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNoRequisiscion);
-            this.Controls.Add(this.txtBidppiclasificadorsubsidios);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ComponentePresupuestal";
             this.Text = "ComponentePresupuestal";
@@ -818,5 +840,6 @@
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.DataGridView dgvPreCompromisos;
         private System.Windows.Forms.Label label12;
+        private FontAwesome.Sharp.IconButton btnLimpiar;
     }
 }

@@ -446,7 +446,7 @@ namespace LectorCFDI
         {
             int resp = 0;
             resp = metodos.EditaPrecompromiso(e_Precompromiso);
-
+            Limpiar();
             return resp;
         }
         private void LlenarGridPrecompromisos()
@@ -523,6 +523,30 @@ namespace LectorCFDI
                 }
             }
         }
+        private void Limpiar()
+        {
+            cmbClasifAdmin.SelectedValue = 0;
+            txtClaveSecretaria.Text = "";
+            txtSecretaria.Text = "";
+            txtClaveSubSecretaria.Text = "";
+            txtSubSecretaria.Text = "";
+            txtClaveDireccion.Text = "";
+            txtDireccion.Text = "";
+            txtClaveProyecto.Text = "";
+            txtclaveProyect.Text = "";
+            txtProyecto.Text = "";
+            txtIdProyecto.Text = "";
+            cmbFteFinanciamiento.SelectedValue = 0;
+            rtxtEspecificacion.Text = "";
+            rtxtJustificacion.Text = "";
+            rtxtObservaciones.Text = "";
+            chkAutorizar.Checked = true;
+            LlenarCmbEnteAdvo();
+            BuscarSecretaria();
+            LlenarcmbFteFinanciamiento();
+
+
+        }
 
         #region Eventos
 
@@ -545,6 +569,7 @@ namespace LectorCFDI
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             InsertarPreCompromiso();
+            Limpiar();
         }
         private void dgvPreCompromisos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -605,6 +630,11 @@ namespace LectorCFDI
         {
             CancelarPreCompromiso();
             LlenarGridPrecompromisos();
+            Limpiar();
+        }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         #endregion

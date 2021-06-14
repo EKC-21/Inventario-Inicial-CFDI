@@ -433,6 +433,35 @@ namespace AccesoDatos
                 return msg;
             }
         }
+        public string LimpiarAcumuladoConceptos()
+        {
+            string msg = "";
+            using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
+            {
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("sp_BorrarAcumuladoConceptosCFDI", oConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@msg", SqlDbType.VarChar, 100).Direction = ParameterDirection.Output;
+
+                    oConnection.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    msg = Convert.ToString(cmd.Parameters["@msg"].Value.ToString());
+
+                    oConnection.Close();
+
+                    cmd.Parameters.Clear();
+                }
+                catch (Exception ex)
+                {
+
+                    return ex.ToString();
+                }
+            }
+            return msg;
+        }
 
         public DataTable LeerConcentradoConceptos()
         {

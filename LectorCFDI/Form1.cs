@@ -262,7 +262,10 @@ namespace LectorCFDI
                 MessageBox.Show(Convert.ToString(ex));
             }
         }
-
+        private void LimpiarAcumuladoDetalles()
+        {
+            metodos.LimpiaAcumuladoCFDI();
+        }
 
 
         private void lstXml_SelectedIndexChanged(object sender, EventArgs e)
@@ -376,6 +379,12 @@ namespace LectorCFDI
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             LlenarListBox();
+        }
+
+        private void btnLimpia_Click(object sender, EventArgs e)
+        {
+            LimpiarAcumuladoDetalles();
+            LlenarAcumuladoConceptos();
         }
     }
 }
