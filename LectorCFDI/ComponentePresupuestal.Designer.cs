@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtNoRequisiscion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -65,11 +65,17 @@
             this.btnProyecto = new FontAwesome.Sharp.IconButton();
             this.btnDireccion = new FontAwesome.Sharp.IconButton();
             this.btnSubSecretaria = new FontAwesome.Sharp.IconButton();
+            this.lblObservaciones = new System.Windows.Forms.Label();
             this.btnSeccretaria = new FontAwesome.Sharp.IconButton();
+            this.lblJustificacion = new System.Windows.Forms.Label();
+            this.rtxtObservaciones = new System.Windows.Forms.RichTextBox();
+            this.lblEspecificaciones = new System.Windows.Forms.Label();
+            this.rtxtJustificacion = new System.Windows.Forms.RichTextBox();
+            this.rtxtEspecificacion = new System.Windows.Forms.RichTextBox();
+            this.txtProyecto = new System.Windows.Forms.TextBox();
             this.cboTipoRequisicion = new System.Windows.Forms.ComboBox();
             this.txtFF = new System.Windows.Forms.TextBox();
             this.txtclaveProyect = new System.Windows.Forms.TextBox();
-            this.txtProyecto = new System.Windows.Forms.TextBox();
             this.gbLstXml = new System.Windows.Forms.GroupBox();
             this.Seleccionar = new System.Windows.Forms.CheckedListBox();
             this.dtpFechaSolicitud = new System.Windows.Forms.DateTimePicker();
@@ -77,12 +83,6 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.rtxtEspecificacion = new System.Windows.Forms.RichTextBox();
-            this.rtxtJustificacion = new System.Windows.Forms.RichTextBox();
-            this.rtxtObservaciones = new System.Windows.Forms.RichTextBox();
-            this.lblEspecificaciones = new System.Windows.Forms.Label();
-            this.lblJustificacion = new System.Windows.Forms.Label();
-            this.lblObservaciones = new System.Windows.Forms.Label();
             this.dgvPreCompromisos = new System.Windows.Forms.DataGridView();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -464,6 +464,17 @@
             this.btnSubSecretaria.UseVisualStyleBackColor = true;
             this.btnSubSecretaria.Click += new System.EventHandler(this.btnSubSecretaria_Click);
             // 
+            // lblObservaciones
+            // 
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservaciones.ForeColor = System.Drawing.Color.White;
+            this.lblObservaciones.Location = new System.Drawing.Point(597, 189);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(103, 16);
+            this.lblObservaciones.TabIndex = 46;
+            this.lblObservaciones.Text = "Observaciones:";
+            // 
             // btnSeccretaria
             // 
             this.btnSeccretaria.FlatAppearance.BorderSize = 0;
@@ -478,6 +489,59 @@
             this.btnSeccretaria.TabIndex = 40;
             this.btnSeccretaria.UseVisualStyleBackColor = true;
             this.btnSeccretaria.Click += new System.EventHandler(this.btnSeccretaria_Click);
+            // 
+            // lblJustificacion
+            // 
+            this.lblJustificacion.AutoSize = true;
+            this.lblJustificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJustificacion.ForeColor = System.Drawing.Color.White;
+            this.lblJustificacion.Location = new System.Drawing.Point(350, 191);
+            this.lblJustificacion.Name = "lblJustificacion";
+            this.lblJustificacion.Size = new System.Drawing.Size(84, 16);
+            this.lblJustificacion.TabIndex = 45;
+            this.lblJustificacion.Text = "Justificación:";
+            // 
+            // rtxtObservaciones
+            // 
+            this.rtxtObservaciones.Location = new System.Drawing.Point(599, 208);
+            this.rtxtObservaciones.Name = "rtxtObservaciones";
+            this.rtxtObservaciones.Size = new System.Drawing.Size(220, 61);
+            this.rtxtObservaciones.TabIndex = 43;
+            this.rtxtObservaciones.Text = "";
+            // 
+            // lblEspecificaciones
+            // 
+            this.lblEspecificaciones.AutoSize = true;
+            this.lblEspecificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEspecificaciones.ForeColor = System.Drawing.Color.White;
+            this.lblEspecificaciones.Location = new System.Drawing.Point(104, 191);
+            this.lblEspecificaciones.Name = "lblEspecificaciones";
+            this.lblEspecificaciones.Size = new System.Drawing.Size(114, 16);
+            this.lblEspecificaciones.TabIndex = 44;
+            this.lblEspecificaciones.Text = "Especificaciones:";
+            // 
+            // rtxtJustificacion
+            // 
+            this.rtxtJustificacion.Location = new System.Drawing.Point(354, 209);
+            this.rtxtJustificacion.Name = "rtxtJustificacion";
+            this.rtxtJustificacion.Size = new System.Drawing.Size(220, 61);
+            this.rtxtJustificacion.TabIndex = 41;
+            this.rtxtJustificacion.Text = "";
+            // 
+            // rtxtEspecificacion
+            // 
+            this.rtxtEspecificacion.Location = new System.Drawing.Point(108, 209);
+            this.rtxtEspecificacion.Name = "rtxtEspecificacion";
+            this.rtxtEspecificacion.Size = new System.Drawing.Size(220, 61);
+            this.rtxtEspecificacion.TabIndex = 42;
+            this.rtxtEspecificacion.Text = "";
+            // 
+            // txtProyecto
+            // 
+            this.txtProyecto.Location = new System.Drawing.Point(167, 133);
+            this.txtProyecto.Name = "txtProyecto";
+            this.txtProyecto.Size = new System.Drawing.Size(652, 20);
+            this.txtProyecto.TabIndex = 21;
             // 
             // cboTipoRequisicion
             // 
@@ -507,13 +571,6 @@
             this.txtclaveProyect.Size = new System.Drawing.Size(35, 20);
             this.txtclaveProyect.TabIndex = 37;
             this.txtclaveProyect.Visible = false;
-            // 
-            // txtProyecto
-            // 
-            this.txtProyecto.Location = new System.Drawing.Point(167, 133);
-            this.txtProyecto.Name = "txtProyecto";
-            this.txtProyecto.Size = new System.Drawing.Size(652, 20);
-            this.txtProyecto.TabIndex = 21;
             // 
             // gbLstXml
             // 
@@ -607,109 +664,51 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // rtxtEspecificacion
-            // 
-            this.rtxtEspecificacion.Location = new System.Drawing.Point(108, 209);
-            this.rtxtEspecificacion.Name = "rtxtEspecificacion";
-            this.rtxtEspecificacion.Size = new System.Drawing.Size(220, 61);
-            this.rtxtEspecificacion.TabIndex = 42;
-            this.rtxtEspecificacion.Text = "";
-            // 
-            // rtxtJustificacion
-            // 
-            this.rtxtJustificacion.Location = new System.Drawing.Point(354, 209);
-            this.rtxtJustificacion.Name = "rtxtJustificacion";
-            this.rtxtJustificacion.Size = new System.Drawing.Size(220, 61);
-            this.rtxtJustificacion.TabIndex = 41;
-            this.rtxtJustificacion.Text = "";
-            // 
-            // rtxtObservaciones
-            // 
-            this.rtxtObservaciones.Enabled = false;
-            this.rtxtObservaciones.Location = new System.Drawing.Point(599, 208);
-            this.rtxtObservaciones.Name = "rtxtObservaciones";
-            this.rtxtObservaciones.Size = new System.Drawing.Size(220, 61);
-            this.rtxtObservaciones.TabIndex = 43;
-            this.rtxtObservaciones.Text = "";
-            // 
-            // lblEspecificaciones
-            // 
-            this.lblEspecificaciones.AutoSize = true;
-            this.lblEspecificaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEspecificaciones.ForeColor = System.Drawing.Color.White;
-            this.lblEspecificaciones.Location = new System.Drawing.Point(104, 191);
-            this.lblEspecificaciones.Name = "lblEspecificaciones";
-            this.lblEspecificaciones.Size = new System.Drawing.Size(114, 16);
-            this.lblEspecificaciones.TabIndex = 44;
-            this.lblEspecificaciones.Text = "Especificaciones:";
-            // 
-            // lblJustificacion
-            // 
-            this.lblJustificacion.AutoSize = true;
-            this.lblJustificacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJustificacion.ForeColor = System.Drawing.Color.White;
-            this.lblJustificacion.Location = new System.Drawing.Point(350, 191);
-            this.lblJustificacion.Name = "lblJustificacion";
-            this.lblJustificacion.Size = new System.Drawing.Size(84, 16);
-            this.lblJustificacion.TabIndex = 45;
-            this.lblJustificacion.Text = "Justificación:";
-            // 
-            // lblObservaciones
-            // 
-            this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblObservaciones.ForeColor = System.Drawing.Color.White;
-            this.lblObservaciones.Location = new System.Drawing.Point(597, 189);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(103, 16);
-            this.lblObservaciones.TabIndex = 46;
-            this.lblObservaciones.Text = "Observaciones:";
-            // 
             // dgvPreCompromisos
             // 
             this.dgvPreCompromisos.AllowUserToAddRows = false;
             this.dgvPreCompromisos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
             this.dgvPreCompromisos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPreCompromisos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreCompromisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreCompromisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPreCompromisos.ColumnHeadersHeight = 35;
             this.dgvPreCompromisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPreCompromisos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPreCompromisos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPreCompromisos.EnableHeadersVisualStyles = false;
             this.dgvPreCompromisos.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvPreCompromisos.Location = new System.Drawing.Point(12, 374);
             this.dgvPreCompromisos.Name = "dgvPreCompromisos";
             this.dgvPreCompromisos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPreCompromisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPreCompromisos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPreCompromisos.RowHeadersVisible = false;
             this.dgvPreCompromisos.RowHeadersWidth = 45;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvPreCompromisos.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvPreCompromisos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPreCompromisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPreCompromisos.Size = new System.Drawing.Size(1056, 232);
             this.dgvPreCompromisos.TabIndex = 0;

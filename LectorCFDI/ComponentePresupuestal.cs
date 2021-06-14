@@ -348,7 +348,7 @@ namespace LectorCFDI
         }
         private void InsertarPreCompromiso()
         {
-            int consecutivo = 001;
+            int consecutivo = 0;
             string Interno = "CFDI-";
             string filepath = "";
             string file = "";
@@ -373,28 +373,36 @@ namespace LectorCFDI
                 if (string.IsNullOrEmpty(txtClaveProyecto.Text)) { txtClaveProyecto.Focus(); return; }
                 if (string.IsNullOrEmpty(txtIdProyecto.Text)) { txtIdProyecto.Focus(); return; }
 
+                consecutivo = metodos.ConsultaIdPrecompromiso();
 
                 if (Seleccionar.CheckedItems.Count > 0)
                 {
                     dtCveAdva = metodos.ConsultaCveAdva();
                     foreach (object indexChecked in Seleccionar.CheckedItems)
                     {
-                        DataRow row = Pociciones.NewRow();
-                        row["Numero"] = Interno + Convert.ToString(consecutivo++);
-                        row["Nombre"] = indexChecked.ToString();
-                        Pociciones.Rows.Add(row);
-                        //xml.Add(indexChecked.ToString());
+                        if (consecutivo > 0)
+                        {
+                            DataRow row = Pociciones.NewRow();
+                            row["Numero"] = Interno + Convert.ToString(consecutivo++);
+                            row["Nombre"] = indexChecked.ToString();
+                            Pociciones.Rows.Add(row);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ocurrió un error");
+                        }
                     }
                     foreach (DataRow row in Pociciones.Rows)
                     {
                         ds.Clear();
                         file = row["Nombre"].ToString();
-                        e_Precompromiso.NumeroInterno = row["Numero"].ToString();
+                        string NumeroInterno = row["Numero"].ToString();
                         filepath = "C:\\Xml\\" + file;
                         ds.ReadXml(filepath);
 
                         AsignarCampos();
                         dtComprobante = ds.Tables["Comprobante"];
+                        e_Precompromiso.NumeroInterno = NumeroInterno;
                         e_Precompromiso.FechaSolicitud = Convert.ToDateTime(dtComprobante.Rows[0]["Fecha"].ToString());
                         e_Precompromiso.FechaAutorizacion = DateTime.Now;
                         e_Precompromiso.Estatus = "A";
@@ -405,6 +413,7 @@ namespace LectorCFDI
                     }
                     MessageBox.Show("los registros se guardaron correctamente.");
                     this.DialogResult = DialogResult.OK;
+                    LlenarGridPrecompromisos();
                 }
                 else
                 {
@@ -573,7 +582,7 @@ namespace LectorCFDI
         {
             E_Precompromiso e_Precompromiso = new E_Precompromiso();
             e_Precompromiso = AsignarCampos();
-            if(chkAutorizar.Checked == true)
+            if (chkAutorizar.Checked == true)
             {
                 e_Precompromiso.Estatus = "A";
             }

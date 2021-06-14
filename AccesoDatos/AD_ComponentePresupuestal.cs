@@ -429,5 +429,27 @@ namespace AccesoDatos
 
             }
         }
+        public int ConsultaIdPrecompromiso()
+        {
+            int IdPreCompromiso = 0;
+            SqlDataReader leer;
+            try
+            {
+                using (SqlConnection oConnection = new SqlConnection(AD_Conexion.CN))
+                {
+                    SqlCommand cmd = new SqlCommand("sp_SeleccionaUltimoIdPrecompromiso", oConnection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oConnection.Open();
+                    IdPreCompromiso = Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+            catch (Exception)
+            {
+
+                IdPreCompromiso = 0;
+            }
+            return IdPreCompromiso;
+        }
     }
 }

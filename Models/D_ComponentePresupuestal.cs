@@ -57,5 +57,9 @@ namespace Models
         {
             return metodos.CancelarPreCompromiso(IdPrecompromiso);
         }
+        public int ConsultaIdPrecompromiso()
+        {
+            return metodos.ConsultaIdPrecompromiso();
+        }
     }
 }
