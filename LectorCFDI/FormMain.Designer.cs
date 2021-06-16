@@ -35,7 +35,7 @@
             this.pictureRestaurar = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
@@ -54,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             this.panelContenedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,7 +130,7 @@
             // panelContenedor
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panelContenedor.Controls.Add(this.label1);
+            this.panelContenedor.Controls.Add(this.pictureBox2);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(220, 35);
             this.panelContenedor.Name = "panelContenedor";
@@ -137,16 +138,15 @@
             this.panelContenedor.TabIndex = 2;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
-            // label1
+            // pictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(251, 272);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(579, 70);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre del Módulo";
+            this.pictureBox2.Image = global::LectorCFDI.Properties.Resources.xml;
+            this.pictureBox2.Location = new System.Drawing.Point(465, 201);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(114, 121);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // panel2
             // 
@@ -304,7 +304,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
             this.panelContenedor.ResumeLayout(false);
-            this.panelContenedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -330,10 +330,10 @@
         private System.Windows.Forms.PictureBox pictureMinimizar;
         private System.Windows.Forms.PictureBox pictureRestaurar;
         private System.Windows.Forms.PictureBox pictureClose;
-        private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

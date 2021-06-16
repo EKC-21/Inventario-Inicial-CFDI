@@ -502,15 +502,14 @@ namespace LectorCFDI
         {
             long IdPreCompromiso = 0;
             int resp = 0;
-
-            IdPreCompromiso = Convert.ToInt64(txtNoRequisiscion.Text);
-            if (IdPreCompromiso == 0)
+            if(txtNoRequisiscion.Text == "")
             {
                 MessageBox.Show("No ha seleccionado ningun registro");
                 return;
-            }
+            }            
             else
             {
+                IdPreCompromiso = Convert.ToInt64(txtNoRequisiscion.Text);
                 resp = metodos.CancelaPrecompromisos(IdPreCompromiso);
                 if (resp == 5)
                 {

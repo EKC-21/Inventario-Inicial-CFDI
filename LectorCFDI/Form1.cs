@@ -20,6 +20,7 @@ namespace LectorCFDI
 {
     public partial class Form1 : Form
     {
+        #region "Declaraciones"
         E_Comprobante e_Comprobante = new E_Comprobante();
         Conceptos concepto = new Conceptos();
         D_ComponenteGasto metodos = new D_ComponenteGasto();
@@ -28,6 +29,7 @@ namespace LectorCFDI
         DataTable datat = new DataTable();
         ArrayList xml = new ArrayList();
         ComponentePresupuestal CompPres = new ComponentePresupuestal();
+        #endregion
 
         public Form1()
         {
@@ -43,6 +45,8 @@ namespace LectorCFDI
             dgvTotalConceptos.ForeColor = Color.Black;
             LlenarAcumuladoConceptos();
         }
+
+        #region "Metodos"
         private void InicializarOpenFileDialog()
         {
             this.openFileDialog1.Filter = "|*.xml";
@@ -208,8 +212,9 @@ namespace LectorCFDI
                             row["ValorUnitario"] = concepto.Attributes().Where(x => x.Name.ToString().Equals("ValorUnitario")).Select(x => x.Value.ToString()).SingleOrDefault();
                             row["Descuento"] = concepto.Attributes().Where(x => x.Name.ToString().Equals("Descuento")).Select(x => x.Value.ToString()).SingleOrDefault();
                             var impuestosConceptos = concepto.Descendants(nsCFDI33 + "Impuestos").Descendants(nsCFDI33 + "Traslados").Elements();
-                            row["ImporteIva"] = impuestosConceptos.Attributes().Where(x => x.Name.ToString().Equals("Importe")).Select(x => x.Value.ToString()).SingleOrDefault();
+                            var importeImpuesto = impuestosConceptos.Sum(P => Convert.ToDecimal(P.Attributes().Where(x => x.Name.ToString().Equals("Importe")).Select(x => x.Value.ToString()).SingleOrDefault()));
 
+                            row["ImporteIva"] = Convert.ToDouble(importeImpuesto.ToString()); //impuestosConceptos.Attributes().Where(x => x.Name.ToString().Equals("Importe")).Select(x => x.Value.ToString()).SingleOrDefault();
                             ConceptoDetalle.Rows.Add(row);
                         }
                         dgvTotalConceptos.DataSource = ConceptoDetalle;
@@ -267,7 +272,9 @@ namespace LectorCFDI
             metodos.LimpiaAcumuladoCFDI();
         }
 
+        #endregion
 
+        #region "Eventos"
         private void lstXml_SelectedIndexChanged(object sender, EventArgs e)
         {
             double Importe = 0;
@@ -370,21 +377,19 @@ namespace LectorCFDI
             label21.Text = dtReceptor.Rows[0]["Nombre"].ToString();
             label19.Text = dtReceptor.Rows[0]["UsoCFDI"].ToString();
         }
-
         private void btnGuardarTodos_Click(object sender, EventArgs e)
         {
             GuardarInventario();
         }
-        
         private void btnAbrir_Click(object sender, EventArgs e)
         {
             LlenarListBox();
         }
-
         private void btnLimpia_Click(object sender, EventArgs e)
         {
             LimpiarAcumuladoDetalles();
             LlenarAcumuladoConceptos();
         }
+        #endregion
     }
 }
